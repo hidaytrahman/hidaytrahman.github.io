@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="ludo-dice.js"></script>
+<style>
+body {
+    background: #000;
+}
+
+.main-wrapper {
+	position:relative;
+}
+
+.currently {
+	color: #fff;
+    font-size: 28em;
+    position: absolute;
+    left: 5%;
+    top: 1%;
+    text-shadow: 13px 5px 13px #9C27B0;
+	-webkit-text-shadow: 13px 5px 13px #9C27B0;
+	-o-text-shadow: 13px 5px 13px #9C27B0;
+	-ms-text-shadow: 13px 5px 13px #9C27B0;
+	-moz-text-shadow: 13px 5px 13px #9C27B0;
+}
+
+.game-wrapper {
+    max-width: 320px;
+    margin: 5% auto;
+    text-align: center;
+    border: 1px solid #cccccc;
+    padding: 1%;
+    color: #968d8d;
+    background: #fff;
+}
+
+.through-button {
+	padding: 5px 10px;
+	margin: 5px;
+	display: inline-block;
+	background: #ff6666;
+	color: #fff;
+	text-decoration: none;
+	border: 6px solid #f33030;
+	font-size: 18px;
+	width: 130px;
+    border-top: 2px solid #f33030;
+	text-align: center;
+}
+
+.through-button:active {
+	background:red;
+	font-weight: bold;
+}
+
+img.image {
+    max-width: 158px;
+    min-width: 158px;
+    max-height: 128px;
+}
+</style>
+</head>
+<body>
+<div class="main-wrapper">
+	<div  class="currently">1</div>
+	<div class="game-wrapper">
+        <h2>Play Ludo</h2>
+		<img src="1.png" class="image" data-val="1">
+		<a href="#" class="through-button">Throw</a>
+	</div>
+
+</div>
+</body>
+</html>
