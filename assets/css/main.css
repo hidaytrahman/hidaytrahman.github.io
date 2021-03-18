@@ -2983,7 +2983,7 @@
 /* Footer */
 
 	#footer {
-		padding: 6em 0 6em 0 ;
+		padding: 2rem !important;
 		background-color: #4686a0;
 		color: rgba(255, 255, 255, 0.75);
 		background-attachment: fixed,							fixed,							fixed;
@@ -3166,7 +3166,7 @@
 		/* Footer */
 
 			#footer {
-				padding: 4em 0 4em 0 ;
+				
 				background-attachment: scroll;
 			}
 
