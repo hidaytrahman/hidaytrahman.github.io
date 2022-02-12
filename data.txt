@@ -1,0 +1,246 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Hidayt Rahman- Github</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description"
+		content="Md Hidaytullah Rahmani, Hidayt Rahman UI / Frontend Developer specialized in HTML5, CSS3, jQuery, JavaScript and Mobile Compatible (Responsive) based website and Frontend Application Development I am specialize in HTML5, CSS3 ,jQuery UI and Bootstrap as well.">
+	<meta name="keyword"
+		content="md hidaytullah rahmani, hidayt rahman, hidayt, rahmani, web developer in delhi, we developer in india, frontend developer,best programmer in india, UI developer">
+	<meta name="author" content="Md Hidaytullah Rahmani">
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<link rel="icon"
+		href="https://media-exp1.licdn.com/dms/image/C5103AQETlwROQluSYw/profile-displayphoto-shrink_100_100/0?e=1588809600&v=beta&t=kvsqvKnbsMuhVtEJxwikSQGU9SSufZi1DVaNnm95Dnk">
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section id="header">
+		<div class="inner">
+			<span class="icon major fa-code"></span> <br> <img style="width: 51px; border-radius: 23px;"
+				src="images/hidayt-10058122.jpg">
+			<h1>Hi, I'm <strong>Hidayt Rahman</strong>, </h1>
+			<h3>In ♥️ with 👩🏽‍💻 Coding, 📷 Photography and Travelling</h3>
+			<h4 class="hr-tags">Specially ! <span>JavaScript (ES6)</span> <span>Angular/ReactJS</span> <span>SASS</span>
+				<span>OOJ'S</span> & <span>ExpressJS with MongoDB</span>
+			</h4>
+			<p><strong>Sr. Front-end / UI Engineer based on Delhi, India.</strong> <br />
+				I have 7+ years of experience. specialized in HTML5, CSS3, SASS, Vanilla JavaScript, ES6
+				with Mobile Compatible (Responsive) based website. <br />
+				<br />I develop user-friendly web interfaces to the highest W3C standards, and create an application
+				that allows the user to experience application in the best and most appropriate way suited to the device
+				they are using<br /><br />
+				I am also involved in Backend REST API development in Node using ExpressJS and MongoDB.
+				<br /><br />
+				I worked on SPA using Angular 8+ also on API Integration.
+			</p>
+			<ul class="actions" style="    text-align: center;">
+				<li><a href="#one" class="button scrolly">Want to know more?</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- One -->
+	<section id="one" class="main style1">
+		<div class="container">
+			<div class="row 150% center-row">
+				<div class="8u 12u$(medium)">
+					<header class="major">
+						<h2>Wanna Squiz more 😉<br />
+						</h2>
+					</header>
+
+					<h4 class="highlight-heading">Specialized:</h4>
+					<ul class="tags">
+						<li><a href="#" class="tag">JavaScript (ES6)</a></li>
+						<li><a href="#" class="tag">Angular 8+</a></li>
+						<li><a href="#" class="tag">HTML5</a></li>
+						<li><a href="#" class="tag">CSS3</a></li>
+						<li><a href="#" class="tag">SASS</a></li>
+						<li><a href="#" class="tag">API Integration</a></li>
+						<li><a href="#" class="tag">DOM Manipulation</a></li>
+					</ul>
+
+					<br />
+					<h4 class="highlight-heading">Hands On:</h4>
+					<ul class="tags">
+						<li><a href="#" class="tag">ExpressJS</a></li>
+						<li><a href="#" class="tag">NodeJS</a></li>
+						<li><a href="#" class="tag">MongoDB</a></li>
+						<li><a href="#" class="tag">REST API development</a></li>
+						<li><a href="#" class="tag">ASP</a></li>
+						<li><a href="#" class="tag">JSP</a></li>
+						<li><a href="#" class="tag">PHP</a></li>
+						<li><a href="#" class="tag">HTML5 Canvas</a></li>
+						<li><a href="#" class="tag">Python</a></li>
+					</ul>
+
+					<br /><br />
+
+					<h4 class="highlight-heading">More Skill Set:</h4>
+					<ul class="tags">
+						<li><a href="#" class="tag">Angular FlexLayout</a></li>
+						<li><a href="#" class="tag">RWD</a></li>
+						<li><a href="#" class="tag">Photoshop CC</a></li>
+						<li><a href="#" class="tag">PSD to XHTML</a></li>
+						<li><a href="#" class="tag">MustacheJS</a></li>
+						<li><a href="#" class="tag">EJS</a></li>
+						<li><a href="#" class="tag">Cross Browser Support</a></li>
+					</ul>
+
+					<br /><br />
+					<h4 class="highlight-heading">Framework & Libraries:</h4>
+					<ul class="tags">
+						<li><a href="#" class="tag">ReactJS</a></li>
+						<li><a href="#" class="tag">Bootstrap</a></li>
+						<li><a href="#" class="tag">Angular</a></li>
+						<li><a href="#" class="tag">JQuery</a></li>
+						<li><a href="#" class="tag">ExpressJS</a></li>
+					</ul>
+					<br>
+
+				</div>
+
+				<div class="4u$ 12u$(medium) important(medium)">
+					<span class="image fit first-img"><img src="images/hidayt-hackathon.jpg"
+							alt="Hidayt Rahman, UI Engineer" /></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row 150%">
+				<div class="12u$ 12u$(medium) important(medium)">
+
+					<h3>Responsibilities</h3>
+					<ul>
+						<li>Work Individually on project to get requirements and deliver on time</li>
+						<li>Develop user-friendly web interfaces to the highest W3C standards.</li>
+						<li>Develop new user-facing features.</li>
+						<li>Hands-on experience in the latest Angular Framework including Typescript.</li>
+						<li>Good knowledge of Object Oriented Javascript.</li>
+						<li>Build reusable code and libraries for future use.</li>
+						<li>Optimize application for maximum speed and scalability.</li>
+						<li>Collaborate with other team members and stakeholders.</li>
+						<li>Experience in Agile Methodology, Debugging tools like Chrome Dev Tools, Firebug, etc.</li>
+						<li>I love to share knowledge (New technologies, Best Practices) with team and peers</li>
+						<li>Active on github and open source contributions</li>
+					</ul>
+
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row 150%">
+				<div class="6u$ 12u$(medium) important(medium)">
+					<header class="major">
+						<h2>There is more 😑<br />
+						</h2>
+					</header>
+
+					<ul>
+						<strong>Domain:</strong>
+						<li>eCommerce</li>
+						<li>Telecom</li>
+						<li>Tour and travels</li>
+						<li>Security and Digital Banking</li>
+						<li>Healthcare</li>
+						<li>Construction</li>
+						<li>Tools / SPA</li>
+					</ul>
+					
+					
+					<h3>Open Source Projects</h3>
+					<div>
+						<a href="https://hidaytrahman.github.io/penless-todo/">Penless Todo</a>
+					</div>
+					<div>
+						<a href="https://hidaytrahman.github.io/sassKickstart/">SASS Kickstart</a>
+					</div>
+					
+					<div>
+						<a href="https://hidaytrahman.github.io/right-hand/">Right Hand</a>
+					</div>
+
+					<br /><br />
+					
+					<i>I love coding, Photography and Travelling.</i><br />
+
+					<hr>
+					<small>"Stackoverflow is not only a website it's a feeling for computer science engineers"</small>
+					<br />
+					<a href="https://stackexchange.com/users/3500315/hidayt-rahman"><img
+							src="https://stackexchange.com/users/flair/3500315.png" width="208" height="58"
+							alt="profile for Hidayt Rahman on Stack Exchange, a network of free, community-driven Q&amp;A sites"
+							title="profile for Hidayt Rahman on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
+
+					<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer>
+					</script>
+					<hr>
+					<small>Let's connect.</small> <br />
+					<div class="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US"
+						data-type="horizontal" data-theme="light" data-vanity="hidaytrahman"><a class="LI-simple-link"
+							href='https://in.linkedin.com/in/hidaytrahman?trk=profile-badge'>Hidayt Rahman</a></div>
+
+					<hr />
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- Footer -->
+	<section id="footer">
+		<!-- Place this tag where you want the button to render. -->
+		<a class="github-button" href="https://github.com/hidaytrahman" data-style="mega"
+			data-count-href="/hidaytrahman/followers" data-count-api="/users/hidaytrahman#followers"
+			data-count-aria-label="# followers on GitHub" aria-label="Follow @hidaytrahman on GitHub">Follow
+			@hidaytrahman</a>
+		<ul class="icons">
+			<li><a href="https://github.com/hidaytrahman" class="icon alt fa-github" title="Github"><span
+						class="label">Github</span></a></li>
+			<li><a href="http://stackoverflow.com/users/2927228/hidayt-rahman" class="icon alt fa-stack-exchange"
+					title=""><span class="label">Stack Overflow</span></a></li>
+			<li><a href="skype:live:hidaytrahman?cal" class="icon alt fa-skype" title=""><span class="label">Call / Text
+					</span></a></li>
+			<li><a href="http://codepen.io/hidaytrahman" class="icon alt fa-codeopen" title=""><span
+						class="label">CodeOpen </span></a></li>
+			<li><a href="https://twitter.com/hidaytrahman" class="icon alt fa-twitter" title=""><span
+						class="label">Twitter </span></a></li>
+			<li><a href="https://plnkr.co/users/hidaytrahman" class="icon alt fa-caret-square-o-down" title=""><span
+						class="label">Plnkr - Experiments </span></a></li>
+			<li><a href="mailto:hidaytrahman@gmail.com" class="icon alt fa-envelope"><span
+						class="label">Email</span></a></li>
+			<li><a href="http://instagram.com/hidaytrahman" class="icon alt fa-instagram"><span
+						class="label">Instagram</span></a></li>
+		</ul>
+		<ul class="copyright">
+			<li>Hidayt Rahman</li>
+		</ul>
+	</section>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	<!-- Place this tag in your head or just before your close body tag. -->
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>
