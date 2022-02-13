@@ -1,3 +1,4 @@
+import Typography from "components/common/Typography";
 import { darken } from "polished";
 import styled from "styled-components";
 import { Transition } from "./Common.styles";
