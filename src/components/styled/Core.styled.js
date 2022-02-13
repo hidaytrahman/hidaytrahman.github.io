@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Transition } from "./Common.styles";
 
 export const StyledHeader = styled.header`
@@ -87,6 +87,12 @@ export const Box = styled.div`
     `border-left: 2px solid  ${theme.colors.secondary}; margin-left: 20px; padding-left: 20px`};
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
+
+  @media screen and (max-width: ${({theme}) => theme.responsive.medium}px) {
+    margin: 1rem;
+    padding: 0;
+    border: 0;
+  }
 `;
 
 export const StyledCard = styled.div`
@@ -110,8 +116,10 @@ export const ProfileCard = styled(StyledCard)`
 
   ${Transition}
 
-  @media screen and (max-width: 922px) {
+  @media screen and (max-width: ${({theme}) => theme.responsive.medium}px) {
     flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 
   &:hover {

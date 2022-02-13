@@ -19,8 +19,9 @@ export const theme = {
     padding: "10px",
     maxWidth: "1024px",
   },
-  mobile: {
+  responsive: {
     small: "767px",
+    medium: 922
   },
 };
 
