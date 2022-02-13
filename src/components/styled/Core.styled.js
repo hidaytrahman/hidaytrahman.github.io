@@ -1,8 +1,9 @@
+import { darken } from "polished";
 import styled from "styled-components";
 import { Transition } from "./Common.styles";
 
 export const StyledHeader = styled.header`
-  background: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => darken(0.07, theme.colors.primary)};
 `;
 
 export const Container = styled.div`
@@ -40,6 +41,7 @@ export const Badge = styled.span`
   margin: ${({ theme }) => theme.units.margin};
   border-radius: ${({ theme }) => theme.units.radius};
   font-size: 14px;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const ProfileAvatar = styled.div`
@@ -50,10 +52,10 @@ export const Link = styled.a`
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.primaryDarken};
+  color: ${({ theme }) => darken(0.1,theme.colors.secondary)};
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -123,9 +125,9 @@ export const ProfileCard = styled(StyledCard)`
   }
 
   &:hover {
-    box-shadow: 4px 7px 8px #adadad;
-    background: ${({ theme }) => theme.colors.secondary};
-    color: #fff;
+    box-shadow: 4px 7px 8px ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => darken(0.5, theme.colors.secondary)};
+    color: ${({ theme }) => theme.colors.text};
   }
 `;
 
@@ -167,6 +169,7 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledTypography = styled.div`
+color: ${({ theme }) => theme.colors.text};
   font-size: 18px;
   font-weight: inherit;
   margin: ${({ margin }) => margin};
@@ -186,18 +189,18 @@ export const StyledTypography = styled.div`
       : variant === "body3"
       ? "font-size: 12px;"
       : ""}
-  ${({ type }) =>
+  ${({ type, theme }) =>
     type === "primary"
-      ? "color: red;"
+      ? `color: ${theme.colors.primary};`
       : type === "secondary"
-      ? "color: #ccc;"
+      ? `color: ${theme.colors.grey};`
       : type === "success"
-      ? "color: green;"
+      ? `color: ${theme.colors.success};`
       : type === "danger"
-      ? "color: red;"
+      ? `color: ${theme.colors.danger};`
       : type === "warning"
-      ? "color: yellow;"
-      : "color: #000;"};
+      ? `color: ${theme.colors.warning};`
+      : `color: ${theme.colors.text};`};
 `;
 
 export const Alert = styled.div`
