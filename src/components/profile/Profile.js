@@ -16,8 +16,8 @@ import Header from "../Header";
 import RepoCard from "../common/RepoCard";
 import Typography from "../common/Typography";
 import axios from "axios";
-import { applyColor, colors } from "core/utils";
 import githubProfile from "core/data/profile.json";
+import Skills from "components/skills/Skills";
 
 const Profile = () => {
   const [profile, setProfile] = useState([]);
@@ -63,61 +63,7 @@ const Profile = () => {
     <>
       <Header profile={profile} />
 
-      <Container padding="2rem">
-        <Flex>
-          <Box>
-            <Typography variant="h3" margin="5px 0">
-              Skillset
-            </Typography>
-            <Flex wrap="wrap">
-              <Box>
-                {profile?.skills?.primary &&
-                  profile?.skills?.primary.map((skill, index) => (
-                    <Skill
-                      src={`https://img.shields.io/badge/-${
-                        skill.title
-                      }-${applyColor(
-                        colors,
-                        index
-                      )}?style=flat&logo=${skill.title.toLocaleLowerCase()}`}
-                      key={index}
-                    />
-                  ))}
-              </Box>
-
-              <Box>
-                {profile?.skills?.frameworks &&
-                  profile?.skills?.frameworks.map((skill, index) => (
-                    <Skill
-                      src={`https://img.shields.io/badge/-${
-                        skill.title
-                      }-${applyColor(
-                        colors,
-                        index
-                      )}?style=flat&logo=${skill.title.toLocaleLowerCase()}`}
-                      key={index}
-                    />
-                  ))}
-              </Box>
-
-              <Box>
-                {profile?.skills?.secondary &&
-                  profile?.skills?.secondary.map((skill, index) => (
-                    <Skill
-                      src={`https://img.shields.io/badge/-${
-                        skill.title
-                      }-${applyColor(
-                        colors,
-                        index + 2
-                      )}?style=flat&logo=${skill.title.toLocaleLowerCase()}`}
-                      key={index}
-                    />
-                  ))}
-              </Box>
-            </Flex>
-          </Box>
-        </Flex>
-      </Container>
+      <Skills profile={profile} />
 
       <Container>
         <Divider margin="1rem" />
