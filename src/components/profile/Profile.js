@@ -5,23 +5,21 @@ import {
   Container,
   Divider,
   Flex,
-  Image,
-  Link,
-  Section,
-  Skill,
 } from "../styled/Core.styled";
 import { useEffect, useState } from "react";
 import Footer from "../Footer";
 import Header from "../Header";
-import RepoCard from "../common/RepoCard";
 import Typography from "../common/Typography";
 import axios from "axios";
 import githubProfile from "core/data/profile.json";
 import Skills from "components/skills/Skills";
+import Repos from "components/repos/Repos"
+
+import Stats from "./Stats"
 
 const Profile = () => {
   const [profile, setProfile] = useState([]);
-  const [repos, setRepos] = useState([]);
+  
 
   const getProfile = async () => {
     const meFromGithub = await axios.get(
@@ -45,18 +43,9 @@ const Profile = () => {
     } catch (_) {}
   };
 
-  const getRepos = async () => {
-    if (base.isLocal) {
-    } else {
-      const res = await axios.get(API.repo.url);
-      console.log("res ", res);
-      setRepos(res.data);
-    }
-  };
 
   useEffect(() => {
     getProfile();
-    getRepos();
   }, []);
 
   return (
@@ -93,58 +82,10 @@ const Profile = () => {
         </Flex>
       </Container>
 
-      <Section variant="secondary">
-        <Container padding="20px">
-          <Typography variant="h3">Stats</Typography>
-          <Flex>
-            <Image
-              margin="10px"
-              height="137px"
-              src="https://stackoverflow-card.vercel.app/?userID=2927228&theme=solarizedlight"
-            />
-
-            <Image
-              margin="10px"
-              height="137px"
-              src="https://github-readme-stats.vercel.app/api/top-langs/?username=hidaytrahman&layout=compact"
-            />
-
-            <Image
-              margin="10px"
-              height="137px"
-              src="https://github-readme-stats.vercel.app/api?username=hidaytrahman&theme=buefy&show_icons=true&count_private=true"
-            />
-          </Flex>
-        </Container>
-      </Section>
-
-      {repos && repos.length > 0 && (
-        <Container padding="20px">
-          <Typography variant="h3">Open Source Projects</Typography>
-          <Flex wrap="wrap">
-            {repos
-              .filter(
-                (item) =>  profile.fav_repos?.includes(item.name))
-              .map((item, index) => (
-                // <RepoCard
-                //   key={index}
-                //   bg={theme.colors.secondary}
-                //   padding="20px"
-                //   margin="10px"
-                //   width="50%"
-                //   item={item}
-                // ></RepoCard>
-                <Link href={item.html_url} target="_blank" key={index}>
-                  <Image
-                    height="100px"
-                    margin="10px"
-                    src={`https://github-readme-stats.vercel.app/api/pin/?username=hidaytrahman&repo=${item.name}`}
-                  />
-                </Link>
-              ))}
-          </Flex>
-        </Container>
-      )}
+      
+      <Stats profile={profile}/>
+      
+      <Repos profile={profile}/>
 
       
   {/* 
