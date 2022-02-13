@@ -74,6 +74,20 @@ const Profile = () => {
   const applyColor = (colors, index) =>
     colors ? noHexCode(colors[index]) : "05122A";
 
+    const checkAllRepo = (repos, item) => {
+      const conditions = null;
+      repos.forEach((element, index) => {
+        return   item.name === element?.fav_repos[index] ||
+        item.name === profile?.fav_repos[1] ||
+        item.name === profile?.fav_repos[2] ||
+        item.name === profile?.fav_repos[3]
+      });
+
+
+      return 
+    
+    }
+
   return (
     <>
       <Header profile={profile} />
@@ -193,12 +207,7 @@ const Profile = () => {
           <Flex wrap="wrap">
             {repos
               .filter(
-                (item, index) =>
-                  item.name === profile.fav_repos[0] ||
-                  item.name === profile.fav_repos[1] ||
-                  item.name === profile.fav_repos[2] ||
-                  item.name === profile.fav_repos[3]
-              )
+                (item) =>  profile.fav_repos?.includes(item.name))
               .map((item, index) => (
                 // <RepoCard
                 //   key={index}
@@ -208,7 +217,7 @@ const Profile = () => {
                 //   width="50%"
                 //   item={item}
                 // ></RepoCard>
-                <Link href={item.html_url} target="_blank">
+                <Link href={item.html_url} target="_blank" key={index}>
                   <Image
                     height="100px"
                     margin="10px"
@@ -220,11 +229,13 @@ const Profile = () => {
         </Container>
       )}
 
+      
+  {/* 
       <Container>
         <Divider margin="1rem" />
       </Container>
 
-      {/* <Container padding="20px">
+    <Container padding="20px">
         <Image src="https://github-readme-medium-card.vercel.app/getMediumBlogs?username=hidaytrahman&theme=light&limit=2" />
       </Container> */}
 
