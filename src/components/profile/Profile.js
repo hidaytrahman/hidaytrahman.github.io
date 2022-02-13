@@ -1,7 +1,5 @@
 import { API, base } from "core/config";
 import {
-  Alert,
-  Avatar,
   Badge,
   Box,
   Container,
@@ -11,18 +9,15 @@ import {
   Link,
   Section,
   Skill,
-} from "./styled/Core.styled";
+} from "../styled/Core.styled";
 import { useEffect, useState } from "react";
-
-import ChipEntity from "./common/ChipEntity";
-import Footer from "./Footer";
-import Header from "./Header";
-import RepoCard from "./common/RepoCard";
-import Typography from "./common/Typography";
+import Footer from "../Footer";
+import Header from "../Header";
+import RepoCard from "../common/RepoCard";
+import Typography from "../common/Typography";
 import axios from "axios";
-import { colors } from "core/utils";
+import { applyColor, colors } from "core/utils";
 import githubProfile from "core/data/profile.json";
-import { useTheme } from "styled-components";
 
 const Profile = () => {
   const [profile, setProfile] = useState([]);
@@ -44,8 +39,6 @@ const Profile = () => {
         setProfile({ ...response, ...me });
       } else {
         const res = await axios.get(API.profile.url);
-
-        console.log("res ", res);
         const completeProfile = { ...res.data, ...me };
         setProfile(completeProfile);
       }
@@ -65,28 +58,6 @@ const Profile = () => {
     getProfile();
     getRepos();
   }, []);
-
-  const noHexCode = (hex) => {
-    const color = hex.substring(1);
-    return color;
-  };
-
-  const applyColor = (colors, index) =>
-    colors ? noHexCode(colors[index]) : "05122A";
-
-    const checkAllRepo = (repos, item) => {
-      const conditions = null;
-      repos.forEach((element, index) => {
-        return   item.name === element?.fav_repos[index] ||
-        item.name === profile?.fav_repos[1] ||
-        item.name === profile?.fav_repos[2] ||
-        item.name === profile?.fav_repos[3]
-      });
-
-
-      return 
-    
-    }
 
   return (
     <>

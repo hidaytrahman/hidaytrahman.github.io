@@ -1,6 +1,6 @@
 import { theme } from "core/theme";
 import { ThemeProvider } from "styled-components";
-import Profile from "./components/Profile";
+import Profile from "./components/profile/Profile";
 
 function App() {
   return (

@@ -24,6 +24,13 @@ export const getRepos = async (profile) => {
 //   const response = JSON.parse(JSON.stringify(jsonData));
 //   setiInsta(response.graphql.user);
 // };
+export const hexCodeStringOnly = (hex) => {
+  const color = hex.substring(1);
+  return color;
+};
+
+export const applyColor = (colors, index) =>
+  colors ? hexCodeStringOnly(colors[index]) : "05122A";
 
 export const colors = [
   "#FF6633",
