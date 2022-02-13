@@ -31,6 +31,7 @@ export const darkTheme = {
     secondary: "#864879",
     light: "#864879",
     text: "#c3c3c3",
+    card: "#1F1D36"
 
   }
 }
