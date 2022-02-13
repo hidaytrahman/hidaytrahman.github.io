@@ -1,17 +1,14 @@
 export const theme = {
   colors: {
     primary: "#D9E4DD",
-    primaryDarken: "#0C7E88",
     secondary: "#FBF7F0",
-    secondaryDarken: "#7D7A7A",
-    light: "#CDC9C3",
+    grey: "#c2c2c2",
     card: "#ffffff",
-    activeCard: "#159D30",
-    hoverCard: "#159D30",
     success: "green",
     danger: "red",
     warning: "yellow",
     white: "#fff",
+    text: "#000000"
   },
   units: {
     radius: "10px",
@@ -24,6 +21,19 @@ export const theme = {
     medium: 922
   },
 };
+
+
+export const darkTheme = {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    primary: "#1F1D36",
+    secondary: "#864879",
+    light: "#864879",
+    text: "#c3c3c3",
+
+  }
+}
 
 export const card_themes = {
   dracula: {
