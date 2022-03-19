@@ -4,8 +4,6 @@ import {
   LinkedinLogo,
   MediumLogo,
 } from "phosphor-react";
-import Button from "./common/Button";
-import Card from "./common/Card";
 import Typography from "./common/Typography";
 import {
   StyledHeader,
@@ -20,9 +18,9 @@ import {
 } from "./styled/Core.styled";
 
 const Header = ({ profile }) => {
-  const clickHandler = (url) => {
-    window.open(url, "_blank");
-  };
+  // const clickHandler = (url) => {
+  //   window.open(url, "_blank");
+  // };
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { Badge, Link, StyledButton } from "../styled/Core.styled";
+import { StyledButton } from "../styled/Core.styled";
 
 const Button = ({ children, link, margin, onClick, size, variant }) => {
   return (

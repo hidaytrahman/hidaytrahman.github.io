@@ -1,4 +1,4 @@
-import { Badge, Link, StyledButton, StyledCard } from "../styled/Core.styled";
+import { StyledCard } from "../styled/Core.styled";
 
 const Card = ({ children, width, padding }) => {
   return (
