@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      metrix:
+      matrix:
         node-version: [15.x]
 
     steps:
@@ -20,7 +20,7 @@ jobs:
       - name: Install and build
         run: npm install && npm run build
 
-       - name: Deploy 🚀
+      - name: Deploy 
         uses: hidaytrahman/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages # The branch the action should deploy to.
