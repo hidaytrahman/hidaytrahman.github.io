@@ -1,7 +1,9 @@
-import Typography from "components/common/Typography";
 import { darken } from "polished";
 import styled from "styled-components";
+import { fadeInAnimation, fadeInDownAnimation, slideInLeftAnimation } from "./Animation";
 import { Transition } from "./Common.styles";
+
+
 
 export const StyledHeader = styled.header`
   background: ${({ theme }) => darken(0.07, theme.colors.primary)};
@@ -82,6 +84,9 @@ export const Box = styled.div`
   max-width: ${({ maxWidth }) => maxWidth};
   width: ${({ width }) => width};
   background: ${({ bg }) => bg};
+
+  animation: 1s ${fadeInDownAnimation};
+
   ${({ dividerRight, theme }) =>
     dividerRight &&
     `border-right: 2px solid ${theme.colors.secondary}; margin-right: 20px; padding-right: 20px`};
@@ -116,6 +121,8 @@ export const ProfileCard = styled(StyledCard)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  animation: 1s ${slideInLeftAnimation};
 
   ${Transition}
 
