@@ -1,14 +1,12 @@
 import { theme, darkTheme } from "core/theme";
-import { ThemeProvider } from "styled-components";
+import {  ThemeProvider } from "styled-components";
 import Profile from "./components/profile/Profile";
 import GlobalStyle from "components/styled/GlobalStyle";
 import Theme from "components/theme/Theme";
 import { useEffect, useState } from "react";
 
 function App() {
-
   const [activeTheme, setActiveTheme] = useState(theme);
-
 
   const currentTheme = () => {
     if(localStorage.getItem("theme") === 'dark') {
@@ -20,7 +18,7 @@ function App() {
 
   useEffect(() => {
     currentTheme();
-  }, [])
+  }, []);
 
   return (
     <main className="App">
