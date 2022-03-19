@@ -1,6 +1,6 @@
 import { darken } from "polished";
 import styled from "styled-components";
-import { fadeInAnimation, fadeInDownAnimation, slideInLeftAnimation } from "./Animation";
+import {  fadeInDownAnimation, slideInLeftAnimation } from "./Animation";
 import { Transition } from "./Common.styles";
 
 
