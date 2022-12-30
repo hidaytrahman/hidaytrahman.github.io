@@ -76,7 +76,7 @@ const Header = ({ profile }) => {
               <Box width="300px" margin="10px" padding="20px">
                 <Typography variant="h1">{profile.name}</Typography>
                 <Typography variant="body1" type="secondary" margin="5px 0">
-                  FrontEnd Engineer
+                  FrontEnd Engineer at <Link href="https://qatalog.com/" target="_blank" rel="noopener noreferrer">Qatalog</Link>
                 </Typography>
 
                 <Link

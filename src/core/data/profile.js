@@ -12,8 +12,10 @@ export const me = {
     "Experience in Agile Methodology, Debugging tools like Chrome Dev Tools, Firebug, etc.",
     "I love to share knowledge (New technologies, Best Practices) with team and peers",
     "Active on github and open source contributions",
+    "Hands On experience in Nodejs Express based application using MongoDB",
+    "Worked on development of REST API using ExpressJS and MongoDB"
   ],
-  fav_repos: ["penless-todo", "sassKickstart", "hotdom", "expenseSpy"],
+  fav_repos: [ "preapi",  "react-flex-styled", "penless-todo", "sassKickstart", "hotdom", "expenseSpy"],
   domains:
     "eCommerce,Telecom,Tour and travels, Security and Digital Banking, Healthcare, Construction, Tools / SPA",
   quotes: ["I love coding, Photography and Travelling."],
