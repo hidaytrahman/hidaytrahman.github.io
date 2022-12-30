@@ -15,7 +15,7 @@ export const me = {
     "Hands On experience in Nodejs Express based application using MongoDB",
     "Worked on development of REST API using ExpressJS and MongoDB"
   ],
-  fav_repos: [ "preapi","penless-todo", "sassKickstart", "hotdom", "expenseSpy"],
+  fav_repos: [ "preapi",  "react-flex-styled", "penless-todo", "sassKickstart", "hotdom", "expenseSpy"],
   domains:
     "eCommerce,Telecom,Tour and travels, Security and Digital Banking, Healthcare, Construction, Tools / SPA",
   quotes: ["I love coding, Photography and Travelling."],
