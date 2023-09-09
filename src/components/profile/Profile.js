@@ -10,6 +10,7 @@ import Skills from 'components/skills/Skills';
 import Repos from 'components/repos/Repos';
 
 import Stats from './Stats';
+import DevToArticles from 'components/articles/devto/DevToArticles';
 
 const Profile = () => {
 	const [profile, setProfile] = useState([]);
@@ -87,6 +88,13 @@ const Profile = () => {
 			<Stats profile={profile} />
 
 			<Repos profile={profile} />
+
+			<section>
+				<Container padding='20px'>
+					<Typography variant='h3'>Top Articles</Typography>
+					<DevToArticles />
+				</Container>
+			</section>
 
 			{/* 
       <Container>
