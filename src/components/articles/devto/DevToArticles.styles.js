@@ -21,24 +21,11 @@ export const Articles = styled.div`
 		color: ${({ theme }) => theme.colors.text};
 		text-decoration: none;
 		padding: 15px;
-		font-size: 18px;
+		font-size: 15px;
 		line-height: 1.5em;
 
 		font-weight: normal;
 		position: relative;
-	}
-
-	.article_box_header_link::before {
-		display: block;
-		content: '.';
-		font-size: 0;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		border: 1px solid rgba(255, 255, 255, 0.2);
-		border-bottom: 0;
 	}
 
 	.article_box_header_link span::before,
@@ -74,20 +61,6 @@ export const Articles = styled.div`
 		border-width: 15px 15px 0;
 		position: absolute;
 		top: 0;
-	}
-
-	.article_box_meta::after {
-		content: '.';
-		display: block;
-		font-size: 0;
-		border: 0 solid transparent;
-		border-top-color: rgba(32, 32, 32, 0.25);
-		width: 0;
-		height: 0;
-		border-width: 10px 10px 0;
-		position: absolute;
-		top: 0;
-		margin-left: 5px;
 	}
 
 	.article_box_author_link {

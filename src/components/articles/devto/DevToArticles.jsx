@@ -9,7 +9,7 @@ function DevToArticles() {
 
 	useEffect(() => {
 		(async function () {
-			const { data } = await axios.get('https://dev.to/api/articles?username=hidaytrahman&per_page=5');
+			const { data } = await axios.get('https://dev.to/api/articles?username=hidaytrahman&per_page=6');
 			setArticles(data);
 		})();
 	}, []);
@@ -32,7 +32,7 @@ function DevToArticles() {
 				</article>
 			))}
 
-			<article className='article_box pink'>
+			<article className='article_box'>
 				<a
 					href='https://dev.to/hidaytrahman/'
 					className='article_box_header_link'
