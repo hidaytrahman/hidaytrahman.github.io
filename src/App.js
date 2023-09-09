@@ -4,7 +4,7 @@ import Profile from './components/profile/Profile';
 import GlobalStyle from 'components/styled/GlobalStyle';
 import Theme from 'components/theme/Theme';
 import { useEffect, useState } from 'react';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();
 
