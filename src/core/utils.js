@@ -101,7 +101,6 @@ export const greetings = ['Good morning ☀️', 'Good afternoon 🌤', 'Good ev
 
 export function greetNow() {
 	const hour = new Date().getHours();
-	console.log({ hour });
 
 	if (hour < 12) return greetings[0];
 	else if (hour < 18) return greetings[1];
