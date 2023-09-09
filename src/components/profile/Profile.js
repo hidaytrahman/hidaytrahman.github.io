@@ -76,10 +76,23 @@ const Profile = () => {
 
 						<div>
 							<Typography variant='h3'>Categories</Typography>
-							{profile.domains &&
-								['FrontEnd', 'MERN Stack', 'Tech Lead', 'CI & CD', 'MEAN Stack'].map((item, index) => (
-									<Badge key={index}>{item}</Badge>
-								))}
+							{/* TODO: put data in github api in hidaytrahman repo */}
+							{[
+								'UI/UX',
+								'MERN Stack',
+								'Github Actions',
+								'Integrations',
+								'TDD',
+								'Open Source',
+								'Provide Training',
+								'REST API',
+								'Design System Library',
+								'Tech Lead',
+								'CI & CD',
+								'MEAN Stack',
+							].map((item, index) => (
+								<Badge key={index}>{item}</Badge>
+							))}
 						</div>
 					</Box>
 				</Flex>
