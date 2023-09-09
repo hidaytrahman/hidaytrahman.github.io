@@ -47,7 +47,7 @@ const Header = ({ profile }) => {
 							<Box width='300px' margin='10px' padding='20px'>
 								<Typography variant='h1'>{profile.name}</Typography>
 								<Typography variant='body1' type='secondary' margin='5px 0'>
-									Tech Lead at{' '}
+									💼 Tech Lead at{' '}
 									<Link href='https://www.infogain.com/' target='_blank' rel='noopener noreferrer'>
 										Infogain
 									</Link>
@@ -58,19 +58,21 @@ const Header = ({ profile }) => {
 									target='_blank'
 								>
 									<Typography variant='body2' margin='5px 0'>
-										{profile.location}
+										📍 {profile.location}
 									</Typography>
 								</Link>
 
 								<Divider />
-								<Typography variant='body2'>{profile.bio}</Typography>
+								<Typography variant='body2'> {profile.bio}</Typography>
 							</Box>
 						</ProfileCard>
 
 						<Box margin='10px' padding='20px'>
-							<Typography>Hi {greetNow()},</Typography>
-							<Typography margin='10px 0'>{profile.intro}</Typography>
-							<Typography>"{profile.quotes}"</Typography>
+							<Typography variant='h3'>Hi 👋 {greetNow()},</Typography>
+							<Typography variant='body1' margin='10px 0'>
+								{profile.intro}
+							</Typography>
+							<Typography variant='body1'>"{profile.quotes}"</Typography>
 						</Box>
 					</Flex>
 				</Container>

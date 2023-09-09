@@ -97,7 +97,7 @@ export function getAdultStatus(age) {
 	}
 }
 
-export const greetings = ['Good morning', 'Good afternoon', 'Good evening'];
+export const greetings = ['Good morning ☀️', 'Good afternoon 🌤', 'Good evening ⛅'];
 
 export function greetNow() {
 	const hour = new Date().getHours();
