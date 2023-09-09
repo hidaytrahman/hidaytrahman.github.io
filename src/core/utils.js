@@ -1,15 +1,19 @@
 export const getRepos = async (profile) => {
-	let arr = [];
-	for (let i = 0; i < profile.fav_repos.length; i++) {
-		fetch(`https://api.github.com/repos/hidaytrahman/${profile.fav_repos[i]}`)
-			.then((res) => res.json())
-			.then((result) => {
-				console.log('res ', result);
-				arr.push(result);
-			});
-	}
+	try {
+		let arr = [];
+		for (let i = 0; i < profile.fav_repos.length; i++) {
+			fetch(`https://api.github.com/repos/hidaytrahman/${profile.fav_repos[i]}`)
+				.then((res) => res.json())
+				.then((result) => {
+					console.log('res ', result);
+					arr.push(result);
+				});
+		}
 
-	return await arr;
+		return await arr;
+	} catch (e) {
+		console.log(e);
+	}
 };
 
 // const getInstagramPhotos = () => {
@@ -25,7 +29,7 @@ export const getRepos = async (profile) => {
 //   setiInsta(response.graphql.user);
 // };
 export const hexCodeStringOnly = (hex) => {
-	const color = hex.substring(1);
+	const color = hex.includes('#') ? hex.substring(1) : hex;
 	return color;
 };
 
@@ -84,10 +88,20 @@ export const colors = [
 	'#6666FF',
 ];
 
+// This is just for test*-
+export function getAdultStatus(age) {
+	if (age > 18) {
+		return 'adult';
+	} else {
+		return 'kid';
+	}
+}
+
 export const greetings = ['Good morning', 'Good afternoon', 'Good evening'];
 
 export function greetNow() {
 	const hour = new Date().getHours();
+	console.log({ hour });
 
 	if (hour < 12) return greetings[0];
 	else if (hour < 18) return greetings[1];
