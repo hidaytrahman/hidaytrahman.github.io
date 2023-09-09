@@ -1,18 +1,21 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useQuery } from 'react-query';
 import { Articles } from './DevToArticles.styles';
 
 function DevToArticles() {
 	// https://dev.to/api/articles?username=hidaytrahman
 
-	const [articles, setArticles] = useState([]);
+	const {
+		isLoading,
+		error,
+		data: articles,
+	} = useQuery('articleData', () =>
+		fetch('https://dev.to/api/articles?username=hidaytrahman&per_page=6').then((res) => res.json())
+	);
 
-	useEffect(() => {
-		(async function () {
-			const { data } = await axios.get('https://dev.to/api/articles?username=hidaytrahman&per_page=6');
-			setArticles(data);
-		})();
-	}, []);
+	if (isLoading) return 'Loading...';
+
+	if (error) return 'An error has occurred: ' + error.message;
 
 	return (
 		<Articles>

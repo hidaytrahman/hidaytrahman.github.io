@@ -8,7 +8,7 @@ export const API = {
 };
 
 export const base = {
-	isLocal: true && window.location.hostname === 'localhost',
+	isLocal: false && window.location.hostname === 'localhost',
 };
 
 if (base.isLocal) {
