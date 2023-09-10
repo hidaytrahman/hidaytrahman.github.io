@@ -27,7 +27,6 @@ const Header = ({ profile, openModal }) => {
 
 	if (error) return 'An error has occurred: ' + error.message;
 
-	// https://api.ipify.org/?format=json
 	return (
 		<>
 			<StyledHeader>
@@ -35,8 +34,10 @@ const Header = ({ profile, openModal }) => {
 					<Flex justifyContent='space-between' alignItems='center' margin='10px' padding='20px'>
 						<ProfileCard>
 							<Box>
+								{/* if story is enabled hightlight the picture */}
 								{profile.meta?.story?.enabled ? (
 									<>
+										{/* Its a story mode */}
 										{profile.meta?.story?.mode === STORY_MODES.STORY ? (
 											<StoryContainer>
 												<div className='story active'>
@@ -50,6 +51,7 @@ const Header = ({ profile, openModal }) => {
 												</div>
 											</StoryContainer>
 										) : (
+											/* Its a LIVE mode */
 											<StoryContainer>
 												<div className='story live'>
 													<figure className='image-container'>
@@ -64,6 +66,7 @@ const Header = ({ profile, openModal }) => {
 										)}
 									</>
 								) : currentIP.ip === process.env.REACT_APP_MYIP ? (
+									// ONLY visible to me
 									<StoryContainer>
 										<div className='story create'>
 											<figure className='image-container'>
@@ -101,8 +104,8 @@ const Header = ({ profile, openModal }) => {
 
 							<Box width='300px' margin='10px' padding='20px'>
 								<Typography variant='h1'>{profile.name}</Typography>
-								<Typography variant='body1' type='secondary' margin='5px 0'>
-									💼 {profile?.organization?.designation}{' '}
+								<Typography variant='body1' margin='5px 0'>
+									💼 {profile?.organization?.designation} at{' '}
 									<Link href={profile?.organization?.url} target='_blank' rel='noopener noreferrer'>
 										{profile?.organization?.title}
 									</Link>
@@ -116,7 +119,7 @@ const Header = ({ profile, openModal }) => {
 										📍 {profile.location} 🇮🇳
 									</Typography>
 								</Link>
-								<Typography variant='body2' type='secondary' margin='5px 0'>
+								<Typography variant='body2' margin='5px 0'>
 									🗨️󠁄󠁄 Language:{' '}
 									{profile.personal?.languages?.map(({ title }, index) => (
 										<span key={title}>

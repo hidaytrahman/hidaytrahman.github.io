@@ -28,11 +28,9 @@ const customStyles = {
 	},
 };
 
-// Modal.defaultStyles.overlay.backgroundColor = 'cornsilk';
 Modal.setAppElement('#root');
 
 const Profile = () => {
-	let subtitle;
 	const [profile, setProfile] = useState([]);
 	const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -76,7 +74,6 @@ const Profile = () => {
 
 	useEffect(() => {
 		getProfile();
-		console.log(' process.env.REACT_APP_MYIP ', process.env.REACT_APP_MYIP);
 	}, []);
 
 	return (
