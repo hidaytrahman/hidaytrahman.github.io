@@ -1,5 +1,3 @@
-import { GithubLogo, InstagramLogo, LinkedinLogo, MediumLogo, Activity } from 'phosphor-react';
-
 import Typography from './common/Typography';
 import {
 	StyledHeader,
@@ -87,12 +85,21 @@ const Header = ({ profile }) => {
 							</Typography>
 							<Typography variant='body1'>"{profile.quotes}"</Typography>
 							<br />
-							<Button
-								variant='secondary'
-								onClick={() => window.open('https://www.linkedin.com/in/hidaytrahman/', '_blank')}
-							>
-								Say Hi
-							</Button>
+							<Flex gap='15px' alignItems='center'>
+								<Button
+									variant='secondary'
+									onClick={() => window.open('https://www.linkedin.com/in/hidaytrahman/', '_blank')}
+								>
+									Say Hi
+								</Button>
+								<Typography variant='body1'>Or</Typography>
+								<Button
+									variant='primary'
+									onClick={() => window.open('https://calendly.com/hidaytrahman/15', '_blank')}
+								>
+									Book my calender
+								</Button>
+							</Flex>
 						</Box>
 					</Flex>
 				</Container>
