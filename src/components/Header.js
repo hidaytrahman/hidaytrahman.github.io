@@ -1,5 +1,7 @@
 import Typography from './common/Typography';
 import { Button } from 'react-carbonui';
+import { useQuery } from 'react-query';
+
 import {
 	StyledHeader,
 	Flex,
@@ -14,7 +16,6 @@ import {
 } from './styled/Core.styled';
 import { greetNow, socialIcons } from 'core/utils';
 import { STORY_MODES } from 'core/config';
-import { useQuery } from 'react-query';
 
 const Header = ({ profile, openModal }) => {
 	const {
