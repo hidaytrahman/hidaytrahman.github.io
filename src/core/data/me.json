@@ -308,7 +308,9 @@
 			"I wish that every day was Saturday and every month was October."
 		],
 		"story": {
-			"enabled": true,
+			"enabled": false,
+			"mode": "story",
+			"modes": ["story", "live"],
 			"config": {
 				"styles": {
 					"background": "pink",

@@ -50,6 +50,80 @@ export const ProfileAvatar = styled.div`
 	margin: ${({ theme }) => theme.units.margin};
 `;
 
+export const StoryContainer = styled.div`
+	cursor: pointer;
+
+	.story {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		.image-container {
+			position: relative;
+			margin: 0;
+			img {
+				border-radius: 50%;
+				overflow: hidden;
+			}
+		}
+	}
+
+	.story .user-name {
+		color: ${({ theme }) => theme.colors.text};
+	}
+
+	.story .text {
+		padding: 5px 8px;
+		background-color: green;
+		color: #fff;
+		border-radius: 4px;
+		position: absolute;
+		left: 50%;
+		bottom: -2px;
+		transform: translate(-50%);
+	}
+
+	.story.live {
+		.live-text {
+			background-color: red;
+		}
+		img {
+			padding: 4px;
+			border: 2px solid red;
+		}
+	}
+
+	.story.active {
+		.active-text {
+			background-color: green;
+		}
+		img {
+			padding: 4px;
+			border: 2px solid green;
+		}
+	}
+
+	.story.create {
+		.add-story {
+			position: absolute;
+			transform: translate(-10%, -10%);
+			right: 10%;
+			bottom: 10%;
+			display: inline-flex;
+			-webkit-box-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			justify-content: center;
+			background-color: rgb(77, 151, 240);
+			color: rgb(255, 255, 255);
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			font-size: 30px;
+			padding-bottom: 4px;
+		}
+	}
+`;
+
 export const Link = styled.a`
 	margin: ${({ margin }) => margin};
 	padding: ${({ padding }) => padding};
@@ -64,7 +138,7 @@ export const Link = styled.a`
 export const Avatar = styled.img`
 	max-width: ${({ width }) => width};
 	border-radius: 50%;
-	border: 5px solid ${({ theme }) => theme.colors.danger};
+	// border: 5px solid ${({ theme }) => theme.colors.danger};
 	margin: ${({ margin }) => margin};
 	padding: ${({ padding }) => padding};
 `;
