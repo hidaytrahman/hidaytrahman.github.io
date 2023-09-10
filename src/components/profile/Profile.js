@@ -2,6 +2,7 @@ import { API, base } from 'core/config';
 import { useEffect, useState } from 'react';
 import { weekdays } from 'moment';
 import axios from 'axios';
+import Modal from 'react-modal';
 
 import { Badge, Box, Container, Divider, Flex, List, Section } from '../styled/Core.styled';
 import Footer from '../Footer';
@@ -14,9 +15,24 @@ import Repos from 'components/repos/Repos';
 import Stats from './Stats';
 import DevToArticles from 'components/articles/devto/DevToArticles';
 import { getCurrentDayName, isWeekend } from 'core/utils';
+import { MyStories } from 'components/common/Stories';
+
+const customStyles = {
+	content: {
+		top: '50%',
+		left: '50%',
+		right: 'auto',
+		bottom: 'auto',
+		marginRight: '-50%',
+		transform: 'translate(-50%, -50%)',
+	},
+};
+
+Modal.setAppElement('#root');
 
 const Profile = () => {
 	const [profile, setProfile] = useState([]);
+	const [modalIsOpen, setIsOpen] = useState(false);
 
 	const getProfile = async () => {
 		try {
@@ -43,13 +59,36 @@ const Profile = () => {
 		} catch (_) {}
 	};
 
+	function openModal() {
+		setIsOpen(true);
+	}
+
+	function afterOpenModal() {
+		// references are now sync'd and can be accessed.
+		// subtitle.style.color = '#f00';
+	}
+
+	function closeModal() {
+		setIsOpen(false);
+	}
+
 	useEffect(() => {
 		getProfile();
 	}, []);
 
 	return (
 		<>
-			<Header profile={profile} />
+			<Modal
+				isOpen={modalIsOpen}
+				onAfterOpen={afterOpenModal}
+				onRequestClose={closeModal}
+				style={customStyles}
+				contentLabel='Stories'
+			>
+				<MyStories story={profile?.meta?.story} />
+			</Modal>
+
+			<Header profile={profile} openModal={openModal} />
 
 			{isWeekend() ? (
 				<Section variant='secondary'>

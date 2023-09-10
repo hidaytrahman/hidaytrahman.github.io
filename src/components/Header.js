@@ -1,4 +1,7 @@
 import Typography from './common/Typography';
+import { Button } from 'react-carbonui';
+import { useQuery } from 'react-query';
+
 import {
 	StyledHeader,
 	Flex,
@@ -9,11 +12,22 @@ import {
 	Link,
 	Divider,
 	ProfileCard,
+	StoryContainer,
 } from './styled/Core.styled';
 import { greetNow, socialIcons } from 'core/utils';
-import { Button } from 'react-carbonui';
+import { STORY_MODES } from 'core/config';
 
-const Header = ({ profile }) => {
+const Header = ({ profile, openModal }) => {
+	const {
+		isLoading,
+		error,
+		data: currentIP,
+	} = useQuery('ipData', () => fetch('https://api.ipify.org/?format=json').then((res) => res.json()));
+
+	if (isLoading) return 'Loading...';
+
+	if (error) return 'An error has occurred: ' + error.message;
+
 	return (
 		<>
 			<StyledHeader>
@@ -21,9 +35,56 @@ const Header = ({ profile }) => {
 					<Flex justifyContent='space-between' alignItems='center' margin='10px' padding='20px'>
 						<ProfileCard>
 							<Box>
-								<ProfileAvatar>
-									<Avatar width='200px' src={profile.avatar_url} />
-								</ProfileAvatar>
+								{/* if story is enabled hightlight the picture */}
+								{profile.meta?.story?.enabled ? (
+									<>
+										{/* Its a story mode */}
+										{profile.meta?.story?.mode === STORY_MODES.STORY ? (
+											<StoryContainer>
+												<div className='story active'>
+													<figure className='image-container'>
+														<ProfileAvatar onClick={openModal}>
+															<Avatar width='200px' src={profile.avatar_url} />
+														</ProfileAvatar>
+														<span className='live-text text'>Updates</span>
+														{/* <span className='active-text'>LIVE</span> */}
+													</figure>
+												</div>
+											</StoryContainer>
+										) : (
+											/* Its a LIVE mode */
+											<StoryContainer>
+												<div className='story live'>
+													<figure className='image-container'>
+														<ProfileAvatar onClick={openModal}>
+															<Avatar width='200px' src={profile.avatar_url} />
+														</ProfileAvatar>
+
+														<span className='live-text text'>LIVE</span>
+													</figure>
+												</div>
+											</StoryContainer>
+										)}
+									</>
+								) : currentIP.ip === process.env.REACT_APP_MYIP ? (
+									// ONLY visible to me
+									<StoryContainer>
+										<div className='story create'>
+											<figure className='image-container'>
+												<ProfileAvatar>
+													<Avatar width='200px' src={profile.avatar_url} />
+												</ProfileAvatar>
+
+												<span className='add-story'>+</span>
+											</figure>
+											<span className='user-name'>Add a story</span>
+										</div>
+									</StoryContainer>
+								) : (
+									<ProfileAvatar>
+										<Avatar width='200px' src={profile.avatar_url} />
+									</ProfileAvatar>
+								)}
 
 								<Box margin='10px' padding='10px'>
 									{profile.socials?.map((social, index) => {
@@ -44,8 +105,8 @@ const Header = ({ profile }) => {
 
 							<Box width='300px' margin='10px' padding='20px'>
 								<Typography variant='h1'>{profile.name}</Typography>
-								<Typography variant='body1' type='secondary' margin='5px 0'>
-									💼 {profile?.organization?.designation}{' '}
+								<Typography variant='body1' margin='5px 0'>
+									💼 {profile?.organization?.designation} at{' '}
 									<Link href={profile?.organization?.url} target='_blank' rel='noopener noreferrer'>
 										{profile?.organization?.title}
 									</Link>
@@ -59,7 +120,7 @@ const Header = ({ profile }) => {
 										📍 {profile.location} 🇮🇳
 									</Typography>
 								</Link>
-								<Typography variant='body2' type='secondary' margin='5px 0'>
+								<Typography variant='body2' margin='5px 0'>
 									🗨️󠁄󠁄 Language:{' '}
 									{profile.personal?.languages?.map(({ title }, index) => (
 										<span key={title}>

@@ -8,9 +8,14 @@ export const API = {
 };
 
 export const base = {
-	isLocal: false && window.location.hostname === 'localhost',
+	isLocal: true && window.location.hostname === 'localhost',
 };
 
 if (base.isLocal) {
 	console.warn('%cMock Mode: ON', 'font-size: 18px; background: yellow;');
 }
+
+export const STORY_MODES = {
+	LIVE: 'live',
+	STORY: 'story',
+};
