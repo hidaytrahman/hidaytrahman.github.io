@@ -1,3 +1,5 @@
+import { GithubLogo, InstagramLogo, LinkedinLogo, MediumLogo } from 'phosphor-react';
+
 export const getRepos = async (profile) => {
 	try {
 		let arr = [];
@@ -106,3 +108,5 @@ export function greetNow() {
 	else if (hour < 18) return greetings[1];
 	else return greetings[2];
 }
+
+export const socialIcons = [LinkedinLogo, GithubLogo, MediumLogo, InstagramLogo];
