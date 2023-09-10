@@ -1,4 +1,5 @@
 import { GithubLogo, InstagramLogo, LinkedinLogo, MediumLogo } from 'phosphor-react';
+
 import Typography from './common/Typography';
 import {
 	StyledHeader,
@@ -12,6 +13,7 @@ import {
 	ProfileCard,
 } from './styled/Core.styled';
 import { greetNow } from 'core/utils';
+import { Button } from 'react-carbonui';
 
 const Header = ({ profile }) => {
 	return (
@@ -69,10 +71,22 @@ const Header = ({ profile }) => {
 
 						<Box margin='10px' padding='20px'>
 							<Typography variant='h3'>Hi 👋 {greetNow()},</Typography>
+							<br />
+							<Typography variant='body1'>
+								My name is Hidayt, I am a senior front-end developer, and I have 10+ years of
+								experience.
+							</Typography>
 							<Typography variant='body1' margin='10px 0'>
 								{profile.intro}
 							</Typography>
 							<Typography variant='body1'>"{profile.quotes}"</Typography>
+							<br />
+							<Button
+								variant='secondary'
+								onClick={() => window.open('https://www.linkedin.com/in/hidaytrahman/', '_blank')}
+							>
+								Say Hi
+							</Button>
 						</Box>
 					</Flex>
 				</Container>
