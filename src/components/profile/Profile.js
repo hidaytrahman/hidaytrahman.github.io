@@ -14,6 +14,7 @@ import Repos from 'components/repos/Repos';
 import Stats from './Stats';
 import DevToArticles from 'components/articles/devto/DevToArticles';
 import { getCurrentDayName, isWeekend } from 'core/utils';
+import { MyStories } from 'components/common/Stories';
 
 const Profile = () => {
 	const [profile, setProfile] = useState([]);
@@ -61,6 +62,8 @@ const Profile = () => {
 			) : (
 				<>{getCurrentDayName() === weekdays[1] ? profile.meta?.weekdaysQuotes?.[1] : null}</>
 			)}
+
+			<MyStories story={profile?.meta?.story} />
 
 			<Skills profile={profile} />
 

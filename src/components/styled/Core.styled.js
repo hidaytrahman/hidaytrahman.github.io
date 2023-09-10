@@ -64,6 +64,7 @@ export const Link = styled.a`
 export const Avatar = styled.img`
 	max-width: ${({ width }) => width};
 	border-radius: 50%;
+	border: 5px solid ${({ theme }) => theme.colors.danger};
 	margin: ${({ margin }) => margin};
 	padding: ${({ padding }) => padding};
 `;
