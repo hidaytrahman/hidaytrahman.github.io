@@ -18,6 +18,35 @@ export const getRepos = async (profile) => {
 	}
 };
 
+/*Motivated, determined, and ready to slay the day. #MonSlay
+Be a rebel – enjoy Monday. Find a reason to like it.
+Mondays are for fresh starts.
+I love it when the coffee kicks in and I realize what an adorable bada** I’m going to be this week.
+This is your Monday morning reminder that you can handle whatever this week throws at you.
+It’s a good week to have a good week.
+Monday is a state of mind. Put on your positive pants and get stuff done.
+Your Monday morning thoughts set the tone for your whole week.
+Hey, I know it’s Monday. But it’s also a new day and a new week. In that lies an opportunity for something special to happen
+*/
+
+// https://authenticallydel.com/funny-monday-quotes/
+// https://parade.com/1105464/marynliles/tuesday-quotes/
+// https://www.blogtrovert.com/funny-thursday-quotes/
+// https://www.ourmindfullife.com/friday-quotes/
+// https://routinelynomadic.com/funny-saturday-quotes/
+
+export const weekdays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+export const weekdaysQuotes = [
+	'Everyone wants me to be a morning person. I could be one, only if morning began after noon, Its Sunday!',
+	'Be a rebel – enjoy Monday. Find a reason to like it.',
+	'monday',
+	'Tuesday is the day I actually start the week, Monday I just deal with the depression of the weekend ending.',
+	'Dear Wednesday, no one likes you. You’re just the ugly cousin of Monday.  – Titteey',
+	'Good morning, Thursday! Let’s make today so productive that we can afford to be lazy tomorrow',
+	'Work starts on Monday. Life begins on Friday.',
+	'I wish that every day was Saturday and every month was October.',
+];
+
 // const getInstagramPhotos = () => {
 //   fetch("https://www.instagram.com/clickimaginehr/?__a=1")
 //     .then((res) => res.json())
@@ -110,3 +139,50 @@ export function greetNow() {
 }
 
 export const socialIcons = [LinkedinLogo, GithubLogo, MediumLogo, InstagramLogo];
+
+export function isWeekend() {
+	var day = new Date().getDay();
+
+	if (day === 6 || day === 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+export function isWeekend2() {
+	const date = new Date();
+
+	let dateString = weekdays[date.getDay()];
+	return dateString === 'saturday' || dateString === 'sunday';
+}
+
+// export function getTodayDateString() {
+// 	const todayDateObj = new Date(); // Today's date object
+// 	todayDateObj.setHours(0, 0, 0, 0); // Set to midnight so we can use it as
+// 	// a key in our data structure below:
+// 	const formattedMonth = ('0' + String(todayDateObj.getMonth())).slice(-2),
+// 		formattedDayOfMonth = ('0' + String(todayDateObj.getDate())).slice(-2),
+// 		formattedYear = String(todayDateObj.getFullYear());
+// 	return `${formattedYear}-${formattedMonth}-${formattedDayOfMonth}`;
+// }
+
+export function getCurrentDayName() {
+	switch (new Date().getDay()) {
+		case 0:
+			return 'sunday';
+		case 1:
+			return 'monday';
+		case 2:
+			return 'tuesday';
+		case 3:
+			return 'wednesday';
+		case 4:
+			return 'thursday';
+		case 5:
+			return 'friday';
+		case 6:
+			return 'saturday';
+		default:
+	}
+}
