@@ -59,6 +59,22 @@ const Skills = ({ profile }) => {
 									/>
 								))}
 						</Box>
+
+						<Box width='100%'>
+							<Typography variant='body2'>
+								<strong>Tools</strong>
+							</Typography>
+							{profile?.skills?.tools &&
+								profile?.skills?.tools.map((skill, index) => (
+									<Skill
+										src={`https://img.shields.io/badge/-${skill.title}-${applyColor(
+											colors,
+											index + 2
+										)}?style=flat&logo=${skill.title.toLocaleLowerCase()}`}
+										key={index}
+									/>
+								))}
+						</Box>
 					</Flex>
 				</Box>
 			</Flex>
