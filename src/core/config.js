@@ -14,3 +14,8 @@ export const base = {
 if (base.isLocal) {
 	console.warn('%cMock Mode: ON', 'font-size: 18px; background: yellow;');
 }
+
+export const STORY_MODES = {
+	LIVE: 'live',
+	STORY: 'story',
+};
