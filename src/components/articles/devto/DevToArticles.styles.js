@@ -75,7 +75,7 @@ export const Articles = styled.div`
 
 	.article_box_time {
 		display: block;
-		color: rgba(255, 255, 255, 0.35);
+		color: ${({ theme }) => theme.colors.text};
 		font-style: italic;
 		font-size: 11px;
 	}

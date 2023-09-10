@@ -1,4 +1,3 @@
-import { GithubLogo, InstagramLogo, LinkedinLogo, MediumLogo } from 'phosphor-react';
 import Typography from './common/Typography';
 import {
 	StyledHeader,
@@ -11,7 +10,8 @@ import {
 	Divider,
 	ProfileCard,
 } from './styled/Core.styled';
-import { greetNow } from 'core/utils';
+import { greetNow, socialIcons } from 'core/utils';
+import { Button } from 'react-carbonui';
 
 const Header = ({ profile }) => {
 	return (
@@ -26,30 +26,28 @@ const Header = ({ profile }) => {
 								</ProfileAvatar>
 
 								<Box margin='10px' padding='10px'>
-									<Link margin='5px' href='https://www.linkedin.com/in/hidaytrahman/' target='_blank'>
-										<LinkedinLogo size={32} />
-									</Link>
-
-									<Link margin='5px' href='https://github.com/hidaytrahman' target='_blank'>
-										<GithubLogo size={32} />
-									</Link>
-
-									<Link margin='5px' href='https://hidaytrahman.medium.com/' target='_blank'>
-										<MediumLogo size={32} />
-									</Link>
-
-									<Link margin='5px' href='https://instagram.com/hidaytrahman/' target='_blank'>
-										<InstagramLogo size={32} />
-									</Link>
+									{profile.socials?.map((social, index) => {
+										const Icon = socialIcons[index];
+										return (
+											<Link
+												margin='5px'
+												href={social.url}
+												target='_blank'
+												key={social.title + index}
+											>
+												<Icon size={32} />
+											</Link>
+										);
+									})}
 								</Box>
 							</Box>
 
 							<Box width='300px' margin='10px' padding='20px'>
 								<Typography variant='h1'>{profile.name}</Typography>
 								<Typography variant='body1' type='secondary' margin='5px 0'>
-									💼 Tech Lead at{' '}
-									<Link href='https://www.infogain.com/' target='_blank' rel='noopener noreferrer'>
-										Infogain
+									💼 {profile?.organization?.designation}{' '}
+									<Link href={profile?.organization?.url} target='_blank' rel='noopener noreferrer'>
+										{profile?.organization?.title}
 									</Link>
 								</Typography>
 
@@ -58,9 +56,18 @@ const Header = ({ profile }) => {
 									target='_blank'
 								>
 									<Typography variant='body2' margin='5px 0'>
-										📍 {profile.location}
+										📍 {profile.location} 🇮🇳
 									</Typography>
 								</Link>
+								<Typography variant='body2' type='secondary' margin='5px 0'>
+									🗨️󠁄󠁄 Language:{' '}
+									{profile.personal?.languages?.map(({ title }, index) => (
+										<span key={title}>
+											{title}
+											{index === profile.personal?.languages.length - 1 ? ' ' : ', '}
+										</span>
+									))}
+								</Typography>
 
 								<Divider />
 								<Typography variant='body2'> {profile.bio}</Typography>
@@ -68,11 +75,31 @@ const Header = ({ profile }) => {
 						</ProfileCard>
 
 						<Box margin='10px' padding='20px'>
-							<Typography variant='h3'>Hi 👋 {greetNow()},</Typography>
+							<Typography variant='h3'>Hi 👋 {greetNow()}</Typography>
+							<br />
+							<Typography variant='body1'>
+								{profile.greet?.replace('{{%totalExperience%}}', profile.totalExperience)}
+							</Typography>
 							<Typography variant='body1' margin='10px 0'>
 								{profile.intro}
 							</Typography>
 							<Typography variant='body1'>"{profile.quotes}"</Typography>
+							<br />
+							<Flex gap='15px' alignItems='center'>
+								<Button
+									variant='secondary'
+									onClick={() => window.open('https://www.linkedin.com/in/hidaytrahman/', '_blank')}
+								>
+									Say Hi
+								</Button>
+								<Typography variant='body1'>Or</Typography>
+								<Button
+									variant='primary'
+									onClick={() => window.open('https://calendly.com/hidaytrahman/15', '_blank')}
+								>
+									Book my calender
+								</Button>
+							</Flex>
 						</Box>
 					</Flex>
 				</Container>
