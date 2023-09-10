@@ -1,17 +1,19 @@
 import { API, base } from 'core/config';
-import { Badge, Box, Container, Divider, Flex, List } from '../styled/Core.styled';
 import { useEffect, useState } from 'react';
+import { weekdays } from 'moment';
+import axios from 'axios';
+
+import { Badge, Box, Container, Divider, Flex, List, Section } from '../styled/Core.styled';
 import Footer from '../Footer';
 import Header from '../Header';
 import Typography from '../common/Typography';
-import axios from 'axios';
 import githubProfile from 'core/data/profile.json';
 import githubMe from 'core/data/me.json';
 import Skills from 'components/skills/Skills';
 import Repos from 'components/repos/Repos';
-
 import Stats from './Stats';
 import DevToArticles from 'components/articles/devto/DevToArticles';
+import { getCurrentDayName, isWeekend } from 'core/utils';
 
 const Profile = () => {
 	const [profile, setProfile] = useState([]);
@@ -48,6 +50,17 @@ const Profile = () => {
 	return (
 		<>
 			<Header profile={profile} />
+
+			{isWeekend() ? (
+				<Section variant='secondary'>
+					<Container padding='20px'>
+						<Typography variant='body1'>{profile.meta?.weekdaysQuotes?.[0]}</Typography>
+						{getCurrentDayName() === weekdays[6] ? profile.meta?.weekdaysQuotes?.[6] : null}
+					</Container>
+				</Section>
+			) : (
+				<>{getCurrentDayName() === weekdays[1] ? profile.meta?.weekdaysQuotes?.[1] : null}</>
+			)}
 
 			<Skills profile={profile} />
 
