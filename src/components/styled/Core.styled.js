@@ -22,6 +22,7 @@ export const Flex = styled.div`
 	padding: ${({ padding }) => padding};
 	background: ${({ bg }) => bg};
 	flex-wrap: ${({ wrap }) => wrap};
+	gap: ${({ gap }) => gap};
 
 	@media screen and (max-width: 767px) {
 		flex-direction: column;
@@ -78,6 +79,16 @@ export const Skill = styled.img`
 	margin: ${({ margin }) => (margin ? margin : '5px')};
 `;
 
+export const List = styled.ul`
+	li {
+		line-height: 22px;
+	}
+
+	li::marker {
+		color: red;
+	}
+`;
+
 export const Box = styled.div`
 	max-width: ${({ maxWidth }) => maxWidth};
 	width: ${({ width }) => width};
@@ -89,7 +100,7 @@ export const Box = styled.div`
 		dividerRight && `border-right: 2px solid ${theme.colors.secondary}; margin-right: 20px; padding-right: 20px`};
 	${({ dividerLeft, theme }) =>
 		dividerLeft && `border-left: 2px solid  ${theme.colors.secondary}; margin-left: 20px; padding-left: 20px`};
-	margin: ${({ margin }) => margin};
+	margin: ${({ margin }) => (margin ? margin : '5px')};
 	padding: ${({ padding }) => padding};
 
 	@media screen and (max-width: ${({ theme }) => theme.responsive.medium}px) {

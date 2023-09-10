@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { Articles } from './DevToArticles.styles';
+import moment from 'moment';
 
 function DevToArticles() {
 	// https://dev.to/api/articles?username=hidaytrahman
@@ -30,7 +31,9 @@ function DevToArticles() {
 							Read more [+]
 						</a>
 
-						<time className='article_box_time'>{article.published_at}</time>
+						<time className='article_box_time'>
+							Published: {moment(article.published_at).format('MMM Do YY')}
+						</time>
 					</div>
 				</article>
 			))}
