@@ -1,5 +1,5 @@
 import { API, base } from 'core/config';
-import { Badge, Box, Container, Divider, Flex } from '../styled/Core.styled';
+import { Badge, Box, Container, Divider, Flex, List } from '../styled/Core.styled';
 import { useEffect, useState } from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
@@ -56,45 +56,45 @@ const Profile = () => {
 			</Container>
 
 			<Container padding='2rem'>
-				<Flex>
+				<Flex gap='20px' alignItems='center' justifyContent='space-between'>
 					<Box width='100%'>
 						<Typography variant='h3'>Responsibilities</Typography>
 						<br />
 						<Typography variant='body2'>
 							<strong>Highlights</strong>
 						</Typography>
-						<ul>
+						<List>
 							{profile.responsibilities?.highlights?.map((item, index) => (
 								<li key={index}>
 									<Typography variant='body2'>{item}</Typography>
 								</li>
 							))}
-						</ul>
+						</List>
 
 						<Typography variant='body2'>
 							<strong>Frontend</strong>
 						</Typography>
-						<ul>
+						<List>
 							{profile.responsibilities?.frontend?.map((item, index) => (
 								<li key={index}>
 									<Typography variant='body2'>{item}</Typography>
 								</li>
 							))}
-						</ul>
+						</List>
 
 						<Typography variant='body2'>
 							<strong>Backend</strong>
 						</Typography>
-						<ul>
+						<List>
 							{profile.responsibilities?.backend?.map((item, index) => (
 								<li key={index}>
 									<Typography variant='body2'>{item}</Typography>
 								</li>
 							))}
-						</ul>
+						</List>
 					</Box>
 
-					<Box maxWidth='370px' dividerLeft={true}>
+					<Box maxWidth='300px' dividerLeft={true}>
 						<div>
 							<Typography variant='h3'>Domains</Typography>
 							{profile.domains &&
