@@ -1,8 +1,9 @@
 import { API, base } from 'core/config';
 import { useEffect, useState } from 'react';
-import { weekdays } from 'moment';
 import axios from 'axios';
 import Modal from 'react-modal';
+import { useTheme } from 'styled-components';
+import { Button } from 'react-carbonui';
 
 import { Badge, Box, Container, Divider, Flex, List, Section } from '../styled/Core.styled';
 import Footer from '../Footer';
@@ -14,7 +15,7 @@ import Skills from 'components/skills/Skills';
 import Repos from 'components/repos/Repos';
 import Stats from './Stats';
 import DevToArticles from 'components/articles/devto/DevToArticles';
-import { getCurrentDayName, isWeekend } from 'core/utils';
+import { getCurrentDayName, isWeekend, weekdays } from 'core/utils';
 import { MyStories } from 'components/common/Stories';
 
 const customStyles = {
@@ -31,6 +32,7 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 const Profile = () => {
+	const theme = useTheme();
 	const [profile, setProfile] = useState([]);
 	const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -90,16 +92,22 @@ const Profile = () => {
 
 			<Header profile={profile} openModal={openModal} />
 
-			{isWeekend() ? (
-				<Section variant='secondary'>
-					<Container padding='20px'>
-						<Typography variant='body1'>{profile.meta?.weekdaysQuotes?.[0]}</Typography>
-						{getCurrentDayName() === weekdays[6] ? profile.meta?.weekdaysQuotes?.[6] : null}
-					</Container>
-				</Section>
-			) : (
-				<>{getCurrentDayName() === weekdays[1] ? profile.meta?.weekdaysQuotes?.[1] : null}</>
-			)}
+			<Section variant='secondary'>
+				<Container padding='20px'>
+					{isWeekend() ? (
+						<>
+							<Typography variant='body1'>{profile.meta?.weekdaysQuotes?.[0]}</Typography>
+							{getCurrentDayName() === weekdays[6] ? profile.meta?.weekdaysQuotes?.[6] : null}
+						</>
+					) : (
+						<>
+							{getCurrentDayName() === weekdays[new Date().getDay()]
+								? profile.meta?.weekdaysQuotes?.[new Date().getDay()]
+								: null}
+						</>
+					)}
+				</Container>
+			</Section>
 
 			<Skills profile={profile} />
 
@@ -107,62 +115,76 @@ const Profile = () => {
 				<Divider margin='1rem' />
 			</Container>
 
-			<Container padding='2rem'>
-				<Flex gap='20px' alignItems='center' justifyContent='space-between'>
-					<Box width='100%'>
-						<Typography variant='h3'>Responsibilities</Typography>
-						<br />
-						<Typography variant='body2'>
-							<strong>Highlights</strong>
-						</Typography>
-						<List>
-							{profile.responsibilities?.highlights?.map((item, index) => (
-								<li key={index}>
-									<Typography variant='body2'>{item}</Typography>
-								</li>
-							))}
-						</List>
+			<Section>
+				<Container padding='2rem'>
+					<Flex gap='20px' alignItems='center' justifyContent='space-between'>
+						<Box width='100%'>
+							<Typography variant='h3'>Responsibilities</Typography>
+							<br />
+							<Typography variant='body2'>
+								<strong>Highlights</strong>
+							</Typography>
+							<List>
+								{profile.responsibilities?.highlights?.map((item, index) => (
+									<li key={index}>
+										<Typography variant='body2'>{item}</Typography>
+									</li>
+								))}
+							</List>
 
-						<Typography variant='body2'>
-							<strong>Frontend</strong>
-						</Typography>
-						<List>
-							{profile.responsibilities?.frontend?.map((item, index) => (
-								<li key={index}>
-									<Typography variant='body2'>{item}</Typography>
-								</li>
-							))}
-						</List>
+							<Typography variant='body2'>
+								<strong>Frontend</strong>
+							</Typography>
+							<List>
+								{profile.responsibilities?.frontend?.map((item, index) => (
+									<li key={index}>
+										<Typography variant='body2'>{item}</Typography>
+									</li>
+								))}
+							</List>
 
-						<Typography variant='body2'>
-							<strong>Backend</strong>
-						</Typography>
-						<List>
-							{profile.responsibilities?.backend?.map((item, index) => (
-								<li key={index}>
-									<Typography variant='body2'>{item}</Typography>
-								</li>
-							))}
-						</List>
-					</Box>
+							<Typography variant='body2'>
+								<strong>Backend</strong>
+							</Typography>
+							<List>
+								{profile.responsibilities?.backend?.map((item, index) => (
+									<li key={index}>
+										<Typography variant='body2'>{item}</Typography>
+									</li>
+								))}
+							</List>
+						</Box>
 
-					<Box maxWidth='300px' dividerLeft={true}>
-						<div>
-							<Typography variant='h3'>Domains</Typography>
-							{profile.domains &&
-								profile.domains.split(',').map((item, index) => <Badge key={index}>{item}</Badge>)}
-						</div>
-						<br />
+						<Box maxWidth='300px' dividerLeft={true}>
+							<div>
+								<Typography variant='h3'>Domains</Typography>
+								{profile.domains &&
+									profile.domains.split(',').map((item, index) => <Badge key={index}>{item}</Badge>)}
+							</div>
+							<br />
 
-						<div>
-							<Typography variant='h3'>Categories</Typography>
-							{profile.categories?.map((item, index) => (
-								<Badge key={index}>{item}</Badge>
-							))}
-						</div>
-					</Box>
-				</Flex>
-			</Container>
+							<Box dividerTop={true}>
+								<Typography variant='h3'>{profile.categories?.title}</Typography>
+								{profile.categories?.list?.map((item, index) => (
+									<Badge key={index} background={theme.colors.primary} fullWidth>
+										{item}
+									</Badge>
+								))}
+							</Box>
+
+							<Flex justifyContent='center'>
+								<Button
+									variant='secondary'
+									size='large'
+									onClick={() => window.open('https://calendly.com/hidaytrahman/15', '_blank')}
+								>
+									Quick Call?
+								</Button>
+							</Flex>
+						</Box>
+					</Flex>
+				</Container>
+			</Section>
 
 			<Stats profile={profile} />
 
