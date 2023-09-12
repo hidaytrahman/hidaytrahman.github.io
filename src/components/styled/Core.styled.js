@@ -1,4 +1,4 @@
-import { darken } from 'polished';
+import { darken, lighten } from 'polished';
 import styled from 'styled-components';
 import { fadeInDownAnimation, slideInLeftAnimation } from './Animation';
 import { Transition } from './Common.styles';
@@ -37,13 +37,13 @@ export const StyledFooter = styled.footer`
 `;
 
 export const Badge = styled.span`
-	display: inline-block;
-	background: ${({ theme }) => theme.colors.secondary};
+	display: ${({ fullWidth }) => (fullWidth ? 'block' : 'inline-block')};
+	background: ${({ theme, background }) => (background ? background : theme.colors.secondary)};
 	padding: 8px 12px;
 	margin: ${({ theme }) => theme.units.margin};
 	border-radius: ${({ theme }) => theme.units.radius};
 	font-size: 14px;
-	color: ${({ theme }) => theme.colors.text};
+	color: ${({ theme, color }) => (color ? color : theme.colors.text)};
 `;
 
 export const ProfileAvatar = styled.div`
@@ -173,6 +173,11 @@ export const Box = styled.div`
 
 	${({ dividerRight, theme }) =>
 		dividerRight && `border-right: 2px solid ${theme.colors.secondary}; margin-right: 20px; padding-right: 20px`};
+	${({ dividerTop, theme }) =>
+		dividerTop && `border-top: 2px solid ${theme.colors.secondary}; margin-top: 20px; padding-top: 20px`};
+	${({ dividerBottom, theme }) =>
+		dividerBottom &&
+		`border-bottom: 2px solid ${theme.colors.secondary}; margin-bottom: 20px; padding-bottom: 20px`};
 	${({ dividerLeft, theme }) =>
 		dividerLeft && `border-left: 2px solid  ${theme.colors.secondary}; margin-left: 20px; padding-left: 20px`};
 	margin: ${({ margin }) => (margin ? margin : '5px')};
@@ -326,7 +331,12 @@ export const Divider = styled.div`
 `;
 
 export const Section = styled.section`
-	${({ variant, theme }) => (variant === 'secondary' ? `background: ${theme.colors.secondary};` : ``)}
+	${({ variant, theme }) =>
+		variant === 'secondary'
+			? `background: ${theme.colors.secondary};`
+			: variant === 'primary'
+			? `background: ${lighten(0.09, theme.colors.primary)};`
+			: ``}
 
 	margin: ${({ margin }) => margin};
 	padding: ${({ padding }) => padding};
