@@ -23,6 +23,9 @@ const Skills = ({ profile }) => {
 											colors,
 											index
 										)}?style=flat&logo=${skill.title.toLocaleLowerCase()}`}
+										alt={skill.title}
+										title={skill.title}
+										aria-label={skill.title}
 										key={index}
 									/>
 								))}
@@ -40,6 +43,9 @@ const Skills = ({ profile }) => {
 											index
 										)}?style=flat&logo=${skill.title.toLocaleLowerCase()}`}
 										key={index}
+										alt={skill.title}
+										title={skill.title}
+										aria-label={skill.title}
 									/>
 								))}
 						</Box>
@@ -56,6 +62,9 @@ const Skills = ({ profile }) => {
 											index + 2
 										)}?style=flat&logo=${skill.title.toLocaleLowerCase()}`}
 										key={index}
+										alt={skill.title}
+										title={skill.title}
+										aria-label={skill.title}
 									/>
 								))}
 						</Box>
@@ -72,6 +81,9 @@ const Skills = ({ profile }) => {
 											index + 2
 										)}?style=flat&logo=${skill.title.toLocaleLowerCase()}`}
 										key={index}
+										alt={skill.title}
+										title={skill.title}
+										aria-label={skill.title}
 									/>
 								))}
 						</Box>

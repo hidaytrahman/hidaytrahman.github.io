@@ -44,7 +44,13 @@ const Header = ({ profile, openModal }) => {
 												<div className='story active'>
 													<figure className='image-container'>
 														<ProfileAvatar onClick={openModal}>
-															<Avatar width='200px' src={profile.avatar_url} />
+															<Avatar
+																width='200px'
+																src={profile.avatar_url}
+																alt='hidaytrahman profile photo'
+																title='hidaytrahman profile photo'
+																aria-label='hidaytrahman profile photo'
+															/>
 														</ProfileAvatar>
 														<span className='live-text text'>Updates</span>
 														{/* <span className='active-text'>LIVE</span> */}
@@ -57,7 +63,13 @@ const Header = ({ profile, openModal }) => {
 												<div className='story live'>
 													<figure className='image-container'>
 														<ProfileAvatar onClick={openModal}>
-															<Avatar width='200px' src={profile.avatar_url} />
+															<Avatar
+																width='200px'
+																src={profile.avatar_url}
+																alt='hidaytrahman stats'
+																title='hidaytrahman stats'
+																aria-label='hidaytrahman stats'
+															/>
 														</ProfileAvatar>
 
 														<span className='live-text text'>LIVE</span>
@@ -72,7 +84,13 @@ const Header = ({ profile, openModal }) => {
 										<div className='story create'>
 											<figure className='image-container'>
 												<ProfileAvatar>
-													<Avatar width='200px' src={profile.avatar_url} />
+													<Avatar
+														width='200px'
+														src={profile.avatar_url}
+														alt='hidaytrahman stats'
+														title='hidaytrahman stats'
+														aria-label='hidaytrahman stats'
+													/>
 												</ProfileAvatar>
 
 												<span className='add-story'>+</span>
@@ -82,7 +100,13 @@ const Header = ({ profile, openModal }) => {
 									</StoryContainer>
 								) : (
 									<ProfileAvatar>
-										<Avatar width='200px' src={profile.avatar_url} />
+										<Avatar
+											width='200px'
+											src={profile.avatar_url}
+											alt='hidaytrahman stats'
+											title='hidaytrahman stats'
+											aria-label='hidaytrahman stats'
+										/>
 									</ProfileAvatar>
 								)}
 
@@ -95,6 +119,8 @@ const Header = ({ profile, openModal }) => {
 												href={social.url}
 												target='_blank'
 												key={social.title + index}
+												title={social.title}
+												aria-label={social.title}
 											>
 												<Icon size={32} />
 											</Link>

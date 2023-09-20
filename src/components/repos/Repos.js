@@ -42,6 +42,9 @@ const Repos = ({ profile }) => {
 									height='100px'
 									margin='10px'
 									src={`https://github-readme-stats.vercel.app/api/pin/?username=hidaytrahman&repo=${item.name}`}
+									alt='open source stats'
+									title='open source stats'
+									aria-label='open source stats'
 								/>
 							</Link>
 						))}
