@@ -128,7 +128,7 @@ export const Link = styled.a`
 	margin: ${({ margin }) => margin};
 	padding: ${({ padding }) => padding};
 	text-decoration: none;
-	color: ${({ theme }) => darken(0.1, theme.colors.secondary)};
+	color: ${({ theme }) => darken(0.9, theme.colors.primary)};
 
 	&:hover {
 		color: ${({ theme }) => theme.colors.secondary};
