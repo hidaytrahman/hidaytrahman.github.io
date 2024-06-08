@@ -96,8 +96,9 @@ const Profile = () => {
 				<Container padding='20px'>
 					{isWeekend() ? (
 						<>
-							<Typography variant='body1'>{profile.meta?.weekdaysQuotes?.[0]}</Typography>
+							
 							{getCurrentDayName() === weekdays[6] ? profile.meta?.weekdaysQuotes?.[6] : null}
+							{getCurrentDayName() === weekdays[1] ? profile.meta?.weekdaysQuotes?.[1] : null}
 						</>
 					) : (
 						<>
