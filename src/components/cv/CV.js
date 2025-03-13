@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import cvData from '../../core/data/cv.json';
 import html2pdf from 'html2pdf.js';
