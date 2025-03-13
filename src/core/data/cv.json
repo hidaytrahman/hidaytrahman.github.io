@@ -6,7 +6,23 @@
     "location": "New Delhi, India",
     "bio": "I'm a JavaScript developer who enjoys creating products to improve the productivity and usability of tech in overall capacity.",
     "linkedin": "https://linkedin.com/in/hidaytrahman",
-    "github": "https://github.com/hidaytrahman"
+    "github": "https://github.com/hidaytrahman",
+    "languages": [
+      {
+        "name": "English",
+        "proficiency": "Professional"
+      },
+      {
+        "name": "Hindi",
+        "proficiency": "Native"
+      },
+      {
+        "name": "Urdu",
+        "proficiency": "Intermediate"
+      }
+    ],
+    "phone": "+91-XXXXXXXXXX",
+    "website": "https://hidaytrahman.github.io"
   },
   "experience": [
     {
@@ -18,7 +34,8 @@
         "Implemented responsive design patterns",
         "Reduced application load time by 40%",
         "Established coding standards and best practices"
-      ]
+      ],
+      "technologies": ["React", "TypeScript", "Node.js", "GraphQL"]
     },
     {
       "company": "Previous Company",
@@ -29,7 +46,8 @@
         "Built reusable component library",
         "Integrated third-party APIs",
         "Improved UI/UX workflows"
-      ]
+      ],
+      "technologies": ["React", "JavaScript", "Redux", "REST APIs"]
     }
   ],
   "education": [
@@ -37,7 +55,9 @@
       "degree": "Bachelor of Technology",
       "field": "Computer Science",
       "institution": "University Name",
-      "year": "2014"
+      "year": "2014",
+      "gpa": "3.8/4.0",
+      "courses": ["Data Structures", "Web Development", "Database Management"]
     }
   ],
   "skills": {
@@ -54,6 +74,50 @@
       "Problem Solving",
       "Communication",
       "Agile Methodology"
+    ],
+    "tools": [
+      "VS Code",
+      "Docker",
+      "Jira",
+      "Figma",
+      "Git"
     ]
-  }
+  },
+  "projects": [
+    {
+      "name": "Personal Portfolio",
+      "description": "A modern portfolio website built with React and styled-components",
+      "url": "https://hidaytrahman.github.io",
+      "technologies": ["React", "Styled Components", "GitHub Pages"],
+      "highlights": [
+        "Implemented responsive design",
+        "Integrated with GitHub API",
+        "Added dark/light theme support"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Developer",
+      "issuer": "Amazon Web Services",
+      "date": "2022",
+      "url": "https://example.com/certification"
+    }
+  ],
+  "publications": [
+    {
+      "title": "Modern Frontend Development Practices",
+      "publisher": "Dev.to",
+      "date": "2023",
+      "url": "https://dev.to/hidaytrahman"
+    }
+  ],
+  "awards": [
+    {
+      "title": "InnerSource Hackathon Winner",
+      "issuer": "Thales",
+      "date": "2019",
+      "description": "Won first place for developing an innovative internal tool"
+    }
+  ]
 }
