@@ -1,0 +1,59 @@
+{
+  "personalInfo": {
+    "name": "Hidayt Rahman",
+    "title": "Senior Frontend Developer",
+    "email": "hidaytrahman@gmail.com",
+    "location": "New Delhi, India",
+    "bio": "I'm a JavaScript developer who enjoys creating products to improve the productivity and usability of tech in overall capacity.",
+    "linkedin": "https://linkedin.com/in/hidaytrahman",
+    "github": "https://github.com/hidaytrahman"
+  },
+  "experience": [
+    {
+      "company": "Thales Group",
+      "position": "Senior Frontend Developer",
+      "period": "2020 - Present",
+      "description": "Leading frontend development initiatives and mentoring team members.",
+      "achievements": [
+        "Implemented responsive design patterns",
+        "Reduced application load time by 40%",
+        "Established coding standards and best practices"
+      ]
+    },
+    {
+      "company": "Previous Company",
+      "position": "Frontend Developer",
+      "period": "2018 - 2020",
+      "description": "Developed and maintained web applications using React.",
+      "achievements": [
+        "Built reusable component library",
+        "Integrated third-party APIs",
+        "Improved UI/UX workflows"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science",
+      "institution": "University Name",
+      "year": "2014"
+    }
+  ],
+  "skills": {
+    "technical": [
+      "JavaScript",
+      "React.js",
+      "TypeScript",
+      "HTML5/CSS3",
+      "Node.js",
+      "Git"
+    ],
+    "soft": [
+      "Team Leadership",
+      "Problem Solving",
+      "Communication",
+      "Agile Methodology"
+    ]
+  }
+}
