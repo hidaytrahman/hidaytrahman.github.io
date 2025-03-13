@@ -17,6 +17,7 @@ import Stats from './Stats';
 import DevToArticles from 'components/articles/devto/DevToArticles';
 import { getCurrentDayName, isWeekend, weekdays } from 'core/utils';
 import { MyStories } from 'components/common/Stories';
+import CV from 'components/cv/CV';
 
 const customStyles = {
 	content: {
@@ -26,6 +27,10 @@ const customStyles = {
 		bottom: 'auto',
 		marginRight: '-50%',
 		transform: 'translate(-50%, -50%)',
+		maxWidth: '90%',
+		maxHeight: '90vh',
+		overflow: 'auto',
+		padding: '2rem'
 	},
 };
 
@@ -35,6 +40,16 @@ const Profile = () => {
 	const theme = useTheme();
 	const [profile, setProfile] = useState([]);
 	const [modalIsOpen, setIsOpen] = useState(false);
+	const [isResumeOpen, setIsResumeOpen] = useState(false);
+
+	useEffect(() => {
+		// Check for resume query parameter
+		const params = new URLSearchParams(window.location.search);
+		const resumeParam = params.get('resume');
+		if (resumeParam === 'modern') {
+			setIsResumeOpen(true);
+		}
+	}, []);
 
 	const getProfile = async () => {
 		try {
@@ -191,6 +206,9 @@ const Profile = () => {
 
 			<Repos profile={profile} />
 
+{/* 
+			<CV /> */}
+
 			<section>
 				<Container padding='20px'>
 					<Typography variant='h3'>Top Articles</Typography>
@@ -208,6 +226,17 @@ const Profile = () => {
       </Container> */}
 
 			<Footer profile={profile} />
+			<Modal
+				isOpen={isResumeOpen}
+				onRequestClose={() => setIsResumeOpen(false)}
+				style={customStyles}
+				contentLabel="Resume Modal"
+			>
+				<CV hideControls={false} />
+				<Flex gap="10px" justifyContent="flex-end" style={{ marginTop: '20px' }}>
+					<Button onClick={() => setIsResumeOpen(false)}>Close</Button>
+				</Flex>
+			</Modal>
 		</>
 	);
 };
