@@ -37,7 +37,7 @@ Modal.setAppElement('#root');
 
 const Header = ({ profile, openModal }) => {
 	const [isResumeOpen, setIsResumeOpen] = useState(false);
-	const [downloadPDF, setDownloadPDF] = useState(null);
+	const [, setDownloadPDF] = useState(null);
 	const {
 		isLoading,
 		error,
