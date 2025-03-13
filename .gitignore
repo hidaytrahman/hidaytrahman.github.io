@@ -1,5 +1,6 @@
 rn
 node_modules
-build
+build/
 coverage/
-.env
+.env/
+.qodo
