@@ -93,7 +93,7 @@ const CV = ({ hideControls, onDownload }) => {
   const { personalInfo, experience, education, skills } = cvData;
   const cvRef = React.useRef();
 
-  const downloadPDF = () => {
+  const downloadPDF = useCallback(() => {
     const element = cvRef.current;
     const opt = {
       margin: 1,
@@ -103,7 +103,7 @@ const CV = ({ hideControls, onDownload }) => {
       jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
     html2pdf().set(opt).from(element).save();
-  };
+  }, []) ;
 
   // Expose downloadPDF function through onDownload prop
   React.useEffect(() => {
