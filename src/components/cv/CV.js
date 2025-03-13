@@ -128,6 +128,7 @@ const ActionButton = styled.button`
   border: none;
   border-radius: ${props => props.isModern ? '0.5rem' : '0'};
   cursor: pointer;
+  margin-left: 0.5rem;
 `;
 
 const CV = ({ hideControls, onDownload }) => {
@@ -145,7 +146,20 @@ const CV = ({ hideControls, onDownload }) => {
       jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
     html2pdf().set(opt).from(element).save();
-  }, []) ;
+  }, []);
+
+  const downloadJSON = useCallback(() => {
+    const jsonString = JSON.stringify(cvData, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'hidayt-rahman-cv.json';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }, []);
 
   // Expose downloadPDF function through onDownload prop
   React.useEffect(() => {
@@ -166,6 +180,9 @@ const CV = ({ hideControls, onDownload }) => {
           </select>
           <ActionButton template={template} onClick={downloadPDF}>
             Download PDF
+          </ActionButton>
+          <ActionButton template={template} onClick={downloadJSON}>
+            Download JSON
           </ActionButton>
         </ButtonContainer>
       )}
