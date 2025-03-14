@@ -12,12 +12,15 @@ import Typography from '../common/Typography';
 import githubProfile from 'core/data/profile.json';
 import githubMe from 'core/data/me.json';
 import Skills from 'components/skills/Skills';
-import Repos from 'components/repos/Repos';
+// import Repos from 'components/repos/Repos';
 import Stats from './Stats';
 import DevToArticles from 'components/articles/devto/DevToArticles';
 import { getCurrentDayName, isWeekend, weekdays } from 'core/utils';
 import { MyStories } from 'components/common/Stories';
 import CV from 'components/cv/CV';
+import FavRepos from 'components/repos/FavRepos';
+
+// TODO: refactor the ugly code from this file :)
 
 const customStyles = {
 	content: {
@@ -41,36 +44,50 @@ const Profile = () => {
 	const [profile, setProfile] = useState([]);
 	const [modalIsOpen, setIsOpen] = useState(false);
 	const [isResumeOpen, setIsResumeOpen] = useState(false);
+	const [isExperiment, setIsExperiment] = useState(false);
 
 	useEffect(() => {
 		// Check for resume query parameter
 		const params = new URLSearchParams(window.location.search);
 		const resumeParam = params.get('resume');
+		const experiments = params.get('experiments');
 		if (resumeParam === 'modern') {
 			setIsResumeOpen(true);
 		}
+		if (experiments === 'true') {
+			setIsExperiment(true);
+		}
+		
 	}, []);
 
 	const getProfile = async () => {
 		try {
 			let me = null;
 			if (base.isLocal) {
+				// Local mock data
 				const response = JSON.parse(JSON.stringify(githubProfile));
 				me = JSON.parse(JSON.stringify(githubMe));
 				console.log(' me ', me);
+				// adding the me.json data to the profile
 				setProfile({ ...response, ...me });
 			} else {
-				// Direct github api calls
+				// Remote github api calls
 
+				// calling the me.json file as an API from the github repo 'hidaytrahman'
 				const meFromGithub = await axios.get(
-					'https://raw.githubusercontent.com/hidaytrahman/hidaytrahman/main/me.json'
+					API.me.url
 				);
 
 				const me = meFromGithub.data;
 
+				// calling the GITHUB API call to get the profile
 				const res = await axios.get(API.profile.url);
+				
+				// aggregating the profile and me.json data
 				const completeProfile = { ...res.data, ...me };
 				console.log(completeProfile);
+
+				// setting the profile
 				setProfile(completeProfile);
 			}
 		} catch (_) {}
@@ -204,10 +221,12 @@ const Profile = () => {
 
 			<Stats profile={profile} />
 
-			<Repos profile={profile} />
+			{/* <Repos profile={profile} /> */}
+			<FavRepos isExperiment={isExperiment}/>
 
-{/* 
-			<CV /> */}
+			
+			{isExperiment ? <CV /> : null}
+			
 
 			<section>
 				<Container padding='20px'>

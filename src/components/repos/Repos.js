@@ -1,14 +1,15 @@
 import axios from 'axios';
 import Typography from 'components/common/Typography';
-import { Container, Flex, Image, Link } from 'components/styled/Core.styled';
+import { Container } from 'components/styled/Core.styled';
 import { API, base } from 'core/config';
 import { useEffect, useState } from 'react';
+import { ProjectCard, RepoGrid } from './Repos.styled';
 
 const Repos = ({ profile }) => {
 	const [repos, setRepos] = useState([]);
 
 	const getRepos = async () => {
-		if (base.isLocal) {
+		if (false) {
 		} else {
 			const res = await axios.get(API.repo.url);
 			console.log('res ', res);
@@ -25,30 +26,28 @@ const Repos = ({ profile }) => {
 		repos.length > 0 && (
 			<Container padding='20px'>
 				<Typography variant='h3'>Open Source Projects</Typography>
-				<Flex wrap='wrap'>
+				<RepoGrid>
 					{repos
 						.filter((item) => profile.fav_repos?.includes(item.name))
 						.map((item, index) => (
-							// <RepoCard
-							//   key={index}
-							//   bg={theme.colors.secondary}
-							//   padding="20px"
-							//   margin="10px"
-							//   width="50%"
-							//   item={item}
-							// ></RepoCard>
-							<Link href={item.html_url} target='_blank' key={index}>
-								<Image
-									height='100px'
-									margin='10px'
-									src={`https://github-readme-stats.vercel.app/api/pin/?username=hidaytrahman&repo=${item.name}`}
-									alt='open source stats'
-									title='open source stats'
-									aria-label='open source stats'
-								/>
-							</Link>
+							<ProjectCard key={index}>
+								<div className="project-header">
+									<h3 className="project-title">{item.name.replace(/-/g, ' ')}</h3>
+									<p className="project-description">{item.description}</p>
+								</div>
+								<div className="project-links">
+									{item.homepage && (
+										<a href={item.homepage} target="_blank" rel="noopener noreferrer" className="project-link primary">
+											Live Demo
+										</a>
+									)}
+									<a href={item.html_url} target="_blank" rel="noopener noreferrer" className="project-link secondary">
+										GitHub
+									</a>
+								</div>
+							</ProjectCard>
 						))}
-				</Flex>
+				</RepoGrid>
 			</Container>
 		)
 	);
