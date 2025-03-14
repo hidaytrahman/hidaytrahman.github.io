@@ -44,8 +44,13 @@ export const Badge = styled.span`
 	border-radius: ${({ theme }) => theme.units.radius};
 	font-size: 14px;
 	color: ${({ theme, color }) => (color ? color : theme.colors.text)};
-`;
+	transition: ${({ theme }) => theme.animations.transition};
 
+	&:hover {
+		transform: scale(1.05);
+		box-shadow: ${({ theme }) => theme.shadows.small};
+	}
+`;
 export const ProfileAvatar = styled.div`
 	margin: ${({ theme }) => theme.units.margin};
 `;
@@ -206,10 +211,10 @@ export const ProfileCard = styled(StyledCard)`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
+	background: ${({ theme }) => theme.colors.card};
+	box-shadow: ${({ theme }) => theme.shadows.small};
 	animation: 1s ${slideInLeftAnimation};
-
-	${Transition}
+	transition: ${({ theme }) => theme.animations.transition};
 
 	@media screen and (max-width: ${({ theme }) => theme.responsive.medium}px) {
 		flex-direction: column;
@@ -218,9 +223,9 @@ export const ProfileCard = styled(StyledCard)`
 	}
 
 	&:hover {
-		box-shadow: 4px 7px 8px ${({ theme }) => theme.colors.primary};
-		background: ${({ theme }) => darken(0.5, theme.colors.secondary)};
-		color: ${({ theme }) => theme.colors.text};
+		box-shadow: ${({ theme }) => theme.shadows.large};
+		transform: translateY(-2px);
+		background: ${({ theme }) => theme.colors.background};
 	}
 `;
 
@@ -232,6 +237,8 @@ export const StyledButton = styled.button`
 	cursor: pointer;
 	margin: ${({ margin }) => margin};
 	padding: ${({ padding }) => padding};
+	transition: ${({ theme }) => theme.animations.transition};
+	box-shadow: ${({ theme }) => theme.shadows.small};
 
 	${({ size }) =>
 		size === 'large'
@@ -256,8 +263,15 @@ export const StyledButton = styled.button`
 			: 'color: #000;'};
 
 	&:hover {
-		background: blue;
-		color: #fff;
+		transform: translateY(-2px);
+		box-shadow: ${({ theme }) => theme.shadows.medium};
+		background: ${({ theme }) => theme.colors.accent};
+		color: ${({ theme }) => theme.colors.white};
+	}
+
+	&:active {
+		transform: translateY(1px);
+		box-shadow: ${({ theme }) => theme.shadows.small};
 	}
 `;
 
@@ -293,7 +307,7 @@ export const StyledTypography = styled.div`
 			? `color: ${theme.colors.danger};`
 			: type === 'warning'
 			? `color: ${theme.colors.warning};`
-			: `color: ${theme.colors.text};`};
+			: `color: ${theme.colors.text};`}
 `;
 
 export const Alert = styled.div`

@@ -1,14 +1,16 @@
 export const theme = {
 	colors: {
-		primary: '#D9E4DD',
-		secondary: '#FBF7F0',
-		grey: '#c2c2c2',
+		primary: '#6366F1',
+		secondary: '#F8FAFC',
+		grey: '#94A3B8',
 		card: '#ffffff',
-		success: 'green',
-		danger: 'red',
-		warning: 'yellow',
+		success: '#22C55E',
+		danger: '#EF4444',
+		warning: '#F59E0B',
 		white: '#fff',
-		text: '#000000',
+		text: '#1E293B',
+		accent: '#3B82F6',
+		background: '#F1F5F9'
 	},
 	units: {
 		radius: '10px',
@@ -18,19 +20,33 @@ export const theme = {
 	},
 	responsive: {
 		small: '767px',
-		medium: 922,
+		medium: '922px',
+		large: '1200px'
 	},
+	animations: {
+		transition: 'all 0.3s ease-in-out',
+		hover: 'transform 0.2s ease-in-out',
+		fadeIn: 'fadeIn 0.5s ease-in',
+		slideIn: 'slideIn 0.5s ease-out'
+	},
+	shadows: {
+		small: '0 1px 3px rgba(0,0,0,0.12)',
+		medium: '0 4px 6px rgba(0,0,0,0.1)',
+		large: '0 10px 15px rgba(0,0,0,0.1)'
+	}
 };
 
 export const darkTheme = {
 	...theme,
 	colors: {
 		...theme.colors,
-		primary: '#1F1D36',
-		secondary: '#864879',
-		light: '#864879',
-		text: '#c3c3c3',
-		card: '#1F1D36',
+		primary: '#818CF8',
+		secondary: '#1E293B',
+		light: '#94A3B8',
+		text: '#E2E8F0',
+		card: '#0F172A',
+		background: '#1E293B',
+		accent: '#60A5FA'
 	},
 };
 
