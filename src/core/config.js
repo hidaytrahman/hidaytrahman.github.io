@@ -5,6 +5,12 @@ export const API = {
 	repo: {
 		url: 'https://api.github.com/users/hidaytrahman/repos',
 	},
+	me: {
+		url: 'https://raw.githubusercontent.com/hidaytrahman/hidaytrahman/main/me.json'
+	},
+	fav_repos: {
+		url: 'https://raw.githubusercontent.com/hidaytrahman/hidaytrahman/main/fav_repos.json'
+	}
 };
 
 export const base = {

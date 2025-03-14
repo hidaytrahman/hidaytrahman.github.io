@@ -5,6 +5,7 @@ import GlobalStyle from 'components/styled/GlobalStyle';
 import Theme from 'components/theme/Theme';
 import { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import WeekendBanner from './components/common/WeekendBanner/WeekendBanner';
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function App() {
 				<Theme setActiveTheme={setActiveTheme} theme={theme} darkTheme={darkTheme} />
 				<GlobalStyle />
 				<QueryClientProvider client={queryClient}>
+					<WeekendBanner />
 					<Profile />
 				</QueryClientProvider>
 			</ThemeProvider>
