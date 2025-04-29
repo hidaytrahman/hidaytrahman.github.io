@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query'
 import { Articles } from './DevToArticles.styles';
 import moment from 'moment';
 
@@ -10,8 +10,11 @@ function DevToArticles() {
 		isLoading,
 		error,
 		data: articles,
-	} = useQuery('articleData', () =>
+	} = useQuery(
+		{queryKey: ['articleData'], 
+			queryFn: () =>
 		fetch('https://dev.to/api/articles?username=hidaytrahman&per_page=6').then((res) => res.json())
+		}
 	);
 
 	if (isLoading) return 'Loading...';

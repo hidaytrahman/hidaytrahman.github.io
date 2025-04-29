@@ -17,7 +17,7 @@ export const Flex = styled.div`
 	display: flex;
 	align-items: ${({ alignItems }) => alignItems};
 	flex-direction: ${({ direction }) => direction};
-	justify-content: ${({ justifyContent }) => justifyContent};
+	justify-content: ${({ justifycontent }) => justifycontent};
 	margin: ${({ margin }) => margin};
 	padding: ${({ padding }) => padding};
 	background: ${({ bg }) => bg};
