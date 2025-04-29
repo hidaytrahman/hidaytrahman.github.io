@@ -199,13 +199,13 @@ const Profile = () => {
 							<Box dividerTop={true}>
 								<Typography variant='h3'>{profile.categories?.title}</Typography>
 								{profile.categories?.list?.map((item, index) => (
-									<Badge key={index} background={theme.colors.primary} fullWidth>
+									<Badge key={index} background={theme.colors.primary} fullwidth="true">
 										{item}
 									</Badge>
 								))}
 							</Box>
 
-							<Flex justifyContent='center'>
+							<Flex justifycontent='center'>
 								<Button
 									variant='secondary'
 									size='large'
