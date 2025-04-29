@@ -1,4 +1,5 @@
 import { Flex } from "components/styled/Core.styled";
+import { Button } from "react-carbonui";
 
 
 // basic story slide styles
