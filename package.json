@@ -1,6 +1,6 @@
 {
 	"name": "hidaytrahman",
-	"version": "1.2.0",
+	"version": "2.0.0",
 	"private": true,
 	"homepage": "https://hidaytrahman.github.io",
 	"dependencies": {
@@ -21,7 +21,7 @@
 		"web-vitals": "^2.1.4"
 	},
 	"engines": {
-		"node": ">=15.0.0"
+		"node": ">=20.0.0"
 	},
 	"scripts": {
 		"deploy": "gh-pages -d dist",
