@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'dist'
   },
-  base: '/hidaytrahman.github.io/', // 👈 For GitHub Pages deployment
+  base: '/', // 👈 For GitHub Pages deployment
   resolve: {
     alias: {
       core: path.resolve(__dirname, 'src/core'),
