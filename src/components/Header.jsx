@@ -1,6 +1,6 @@
 import Typography from './common/Typography';
 import { Button } from 'react-carbonui';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query'
 import Modal from 'react-modal';
 import { useState } from 'react';
 import CV from './cv';

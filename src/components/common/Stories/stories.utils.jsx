@@ -1,5 +1,5 @@
-const { Flex } = require('components/styled/Core.styled');
-const { Button } = require('react-carbonui');
+import { Flex } from "components/styled/Core.styled";
+
 
 // basic story slide styles
 const slideStyles = {
