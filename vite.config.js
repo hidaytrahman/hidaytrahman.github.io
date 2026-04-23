@@ -11,8 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       core: path.resolve(__dirname, 'src/core'),
-      components: path.resolve(__dirname, 'src/components'),
-      "react-query": '@tanstack/react-query'
+      components: path.resolve(__dirname, 'src/components')
     }
   }
 })
