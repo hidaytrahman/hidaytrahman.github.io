@@ -4,6 +4,9 @@
 	"private": true,
 	"homepage": "https://hidaytrahman.github.io",
 	"dependencies": {
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.1",
+		"@mui/material": "^7.2.0",
 		"@tanstack/react-query": "^5.74.11",
 		"axios": "^1.6.8",
 		"gh-pages": "^3.2.3",
