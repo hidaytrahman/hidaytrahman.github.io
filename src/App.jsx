@@ -1,23 +1,29 @@
 import { useEffect, useMemo, useState } from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box, Container, Stack, Typography, Paper } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { theme, darkTheme } from 'core/theme';
 import { lightMuiTheme, darkMuiTheme } from 'core/muiTheme';
-import Profile from './components/profile/Profile';
-import ThemeToggle from './components/theme/ThemeToggle';
-import WeekendBanner from './components/common/WeekendBanner/WeekendBanner';
+import profileData from 'core/data/profile.json';
+import meData from 'core/data/me.json';
+import GlobalStyle from 'components/styled/GlobalStyle';
+import ThemeToggle from 'components/theme/ThemeToggle';
+import HeroScreen from 'screens/HeroScreen';
+import AboutScreen from 'screens/AboutScreen';
+import SkillsScreen from 'screens/SkillsScreen';
+import ProjectsScreen from 'screens/ProjectsScreen';
+import ContactScreen from 'screens/ContactScreen';
 
-const queryClient = new QueryClient();
+const defaultProfile = { ...profileData, ...meData };
 
 function App() {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('dark');
+  const [profile] = useState(defaultProfile);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme');
-    setMode(storedTheme === 'dark' ? 'dark' : 'light');
+    setMode(storedTheme === 'light' ? 'light' : 'dark');
   }, []);
 
   const activeTheme = useMemo(
@@ -35,57 +41,52 @@ function App() {
     localStorage.setItem('theme', nextMode);
   };
 
+  // add a todo
+  const todo = () => {
+    console.log('This is a todo item');
+
+    const todos = [];
+    const newTodo = { id: 1, text: 'Learn React', completed: false };
+    todos.push(newTodo);
+    console.log('Added todo:', newTodo);
+
+    // edit todo
+    console.log('This is an edited todo item');
+
+    const editedTodo = { ...newTodo, text: 'Learn React and Redux' };
+    console.log('Edited todo:', editedTodo);
+
+    // delete todo
+    console.log('This is a deleted todo item');
+  };
+
   return (
     <MuiThemeProvider theme={muiTheme}>
       <StyledThemeProvider theme={activeTheme}>
         <CssBaseline />
-        <QueryClientProvider client={queryClient}>
-          <Box
-            component="main"
+        <GlobalStyle />
+        <Box
+          component="main"
+          sx={{ minHeight: '100vh', position: 'relative', pb: 8 }}
+        >
+          <Container
+            maxWidth="xl"
             sx={{
-              minHeight: '100vh',
-              bgcolor: 'background.default',
-              color: 'text.primary',
+              pt: { xs: 4, md: 6 },
+              pb: { xs: 6, md: 8 },
+              position: 'relative',
             }}
           >
-            <Container maxWidth="xl" sx={{ py: { xs: 3, md: 5 } }}>
-              <Stack
-                direction={{ xs: 'column', md: 'row' }}
-                justifyContent="space-between"
-                alignItems="center"
-                spacing={3}
-                mb={4}
-              >
-                <Box>
-                  <Typography
-                    variant="overline"
-                    color="primary"
-                    sx={{ letterSpacing: 1.2 }}
-                  >
-                    Frontend Architect Portfolio
-                  </Typography>
-                  <Typography
-                    variant="h4"
-                    component="h1"
-                    fontWeight={700}
-                    sx={{ mt: 1, maxWidth: 700 }}
-                  >
-                    Hi, I’m Hidayt — building polished interfaces with modern
-                    React and a product-first mindset.
-                  </Typography>
-                </Box>
-                <ThemeToggle mode={mode} onToggle={handleThemeToggle} />
-              </Stack>
-              <Paper
-                elevation={0}
-                sx={{ borderRadius: 4, overflow: 'hidden', mb: 4 }}
-              >
-                <WeekendBanner />
-              </Paper>
-              <Profile />
-            </Container>
-          </Box>
-        </QueryClientProvider>
+            <Box sx={{ position: 'fixed', top: 20, right: 20, zIndex: 10 }}>
+              <ThemeToggle mode={mode} onToggle={handleThemeToggle} />
+            </Box>
+            <HeroScreen profile={profile} />
+            <AboutScreen profile={profile} />
+            <SkillsScreen profile={profile} />
+            <ProjectsScreen profile={profile} />
+            <ContactScreen profile={profile} />
+          </Container>
+        </Box>
       </StyledThemeProvider>
     </MuiThemeProvider>
   );

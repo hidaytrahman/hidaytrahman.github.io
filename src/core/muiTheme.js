@@ -1,14 +1,13 @@
 import { createTheme } from '@mui/material/styles';
-import { blueGrey } from '@mui/material/colors';
 
 const baseTheme = {
   typography: {
     fontFamily: ['Inter', 'system-ui', 'sans-serif'].join(','),
-    h1: { fontWeight: 700, letterSpacing: '-0.04em' },
-    h2: { fontWeight: 700 },
+    h1: { fontWeight: 800, letterSpacing: '-0.04em' },
+    h2: { fontWeight: 800 },
     h3: { fontWeight: 700 },
-    body1: { lineHeight: 1.75 },
-    body2: { lineHeight: 1.7 },
+    body1: { lineHeight: 1.85 },
+    body2: { lineHeight: 1.75 },
   },
   shape: {
     borderRadius: 20,
@@ -18,18 +17,24 @@ const baseTheme = {
       defaultProps: {
         disableElevation: true,
       },
-    },
-    MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 24,
+          borderRadius: 18,
+          textTransform: 'none',
         },
       },
     },
     MuiPaper: {
       styleOverrides: {
         root: {
-          borderRadius: 24,
+          borderRadius: 28,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 28,
         },
       },
     },
@@ -39,22 +44,22 @@ const baseTheme = {
 export const lightMuiTheme = createTheme({
   ...baseTheme,
   palette: {
-    mode: 'light',
+    mode: 'dark',
     primary: {
-      main: '#386dc7',
+      main: '#8fb7ff',
     },
     secondary: {
-      main: '#00adb5',
+      main: '#c084fc',
     },
     background: {
-      default: '#f3f7ff',
-      paper: '#ffffff',
+      default: '#020314',
+      paper: '#0e172a',
     },
     text: {
-      primary: '#0f172a',
-      secondary: '#475569',
+      primary: '#f8fafc',
+      secondary: '#cbd5e1',
     },
-    divider: blueGrey[100],
+    divider: 'rgba(255,255,255,0.12)',
   },
 });
 
@@ -63,19 +68,19 @@ export const darkMuiTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#89a7ff',
+      main: '#8fb7ff',
     },
     secondary: {
-      main: '#50c6d5',
+      main: '#5eead4',
     },
     background: {
-      default: '#07101c',
-      paper: '#0f1520',
+      default: '#020314',
+      paper: '#0b1320',
     },
     text: {
       primary: '#f8fafc',
-      secondary: '#cbd5e1',
+      secondary: '#94a3b8',
     },
-    divider: blueGrey[700],
+    divider: 'rgba(255,255,255,0.14)',
   },
 });

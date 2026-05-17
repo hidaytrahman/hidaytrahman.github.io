@@ -1,31 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-		'Droid Sans', 'Helvetica Neue', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  min-height: 100vh;
+  background: transparent;
+  color: #edf2ff;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.8;
+  animation: drift 18s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.ReactModalPortal .ReactModal__Overlay {
-	background-color: #000000cc !important;
+.hero-orb--blue {
+  width: 380px;
+  height: 380px;
+  background: rgba(94, 131, 255, 0.28);
+  top: -140px;
+  left: -80px;
 }
 
-.ReactModal__Body--open #root {
-	filter: blur(3px);
+.hero-orb--pink {
+  width: 320px;
+  height: 320px;
+  background: rgba(224, 112, 255, 0.22);
+  bottom: -80px;
+  right: -100px;
+  animation-delay: 4s;
 }
 
-
-.code-line {
-	font-size: 10px;
-    background: black;
-    color: #fff;
-    padding: 5px 9px;
-    display: inline-block;
-    font-family: monospace;
-    border-radius: 5px;
-    margin: 5px 0;
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(18px, -24px);
+  }
 }
