@@ -1,13 +1,16 @@
 export const portfolio = {
 	name: 'Hidayt Rahman',
-	role: 'Technology Lead · Senior Frontend Engineer',
-	location: 'New Delhi, India',
+	role: 'Software Engineer IV · Frontend Architect',
+	location: 'Delhi, India',
 	email: 'hidaytrahman@gmail.com',
-	intro: 'I’m a technology lead and frontend engineer who turns complex product needs into clear, dependable experiences—and helps teams build them with confidence.',
+	organization: { title: 'Candescent', designation: 'Software Engineer IV', url: 'https://www.candescent.com/' },
+	languages: ['English', 'Hindi', 'Urdu'],
+	quote: 'I love coding, photography, and traveling.',
+	intro: 'I’m a frontend architect who enjoys designing solutions that increase the efficiency and usability of technology. I bring peers together to solve difficult problems with clear, thoughtful engineering.',
 	highlights: [
-		{ value: '10+', label: 'years building for the web' },
-		{ value: 'Lead', label: 'frontend teams and practices' },
-		{ value: 'End to end', label: 'from systems to interface' },
+		{ value: '11+', label: 'years building for the web' },
+		{ value: 'Architect', label: 'frontend systems and solutions' },
+		{ value: '3', label: 'languages: English, Hindi, Urdu' },
 	],
 	projects: [
 		{
@@ -47,10 +50,10 @@ export const portfolio = {
 	],
 	roles: [
 		{
-			period: 'FEB 2023 — PRESENT', company: 'Infogain', title: 'Technology Lead', location: 'Noida · India',
+			period: 'CURRENT', company: 'Candescent', title: 'Software Engineer IV', location: 'Delhi · India',
 			label: 'Current role',
-			summary: 'Leading technology work at Infogain, with a frontend focus and responsibility for helping teams deliver dependable product experiences.',
-			focus: ['Frontend engineering and architecture', 'Team guidance and technical training', 'Client collaboration and delivery'],
+			summary: 'Working as a Software Engineer IV at Candescent, bringing a frontend architecture perspective to solutions that improve the efficiency and usability of technology.',
+			focus: ['Frontend architecture and solution design', 'Reusable, user-focused frontend systems', 'Collaboration, technical training, and delivery'],
 		},
 		{
 			period: '2019', company: 'InnerSource Hackathon', title: 'Team participant', location: 'Worldwide team event',
@@ -66,10 +69,19 @@ export const portfolio = {
 		},
 	],
 	capabilities: [
-		{ title: 'Frontend', items: ['React', 'TypeScript', 'JavaScript', 'Next.js', 'HTML & CSS', 'Design systems'] },
-		{ title: 'Architecture', items: ['Frontend architecture', 'Component libraries', 'Performance', 'Testing', 'Accessibility'] },
-		{ title: 'Team & delivery', items: ['Technical leadership', 'Mentoring & training', 'Client collaboration', 'Agile delivery'] },
-		{ title: 'Beyond the UI', items: ['Node.js', 'REST APIs', 'GraphQL', 'GitHub Actions'] },
+		{ title: 'Primary', items: ['ReactJS', 'JavaScript', 'NextJS', 'NestJS', 'TypeScript', 'Node.js', 'HTML5', 'CSS3', 'SCSS', 'GitHub Actions'] },
+		{ title: 'Frameworks', items: ['React', 'NextJS', 'TailwindCSS', 'ExpressJS', 'Material UI', 'Angular', 'Bootstrap'] },
+		{ title: 'Secondary', items: ['MongoDB', 'Figma', 'Photoshop', 'jQuery', 'GraphQL', 'WordPress', 'PHP', 'AEM', 'Python', 'Mustache.js', 'Handlebars', 'Apollo Client', 'GCP Static'] },
+		{ title: 'Tools', items: ['Storybook', 'Agile', 'Webpack', 'Vercel', 'Git', 'Docker', 'CI / CD', 'Babel', 'JIRA / Confluence', 'Shortcut'] },
+		{ title: 'Domains', items: ['eCommerce', 'Telecom', 'Travel', 'Security & digital banking', 'Healthcare', 'Construction', 'Tools & SPAs'] },
+	],
+	writing: [
+		{ title: 'A Modern Alternative to Create React App', url: 'https://dev.to/hidaytrahman/a-modern-alternative-to-create-react-app-4774', meta: 'Mar 14, 2025 · React · Tooling' },
+		{ title: 'Serve localhost with custom domain', url: 'https://dev.to/hidaytrahman/serve-localhost-with-custom-domain-3c3d', meta: 'Feb 10, 2024 · Development · Networking' },
+		{ title: 'Prevent app crashes with ExpressJS', url: 'https://dev.to/hidaytrahman/prevent-app-crashes-with-expressjs-545j', meta: 'Sep 14, 2023 · Node.js · ExpressJS' },
+		{ title: 'Manual Trigger on Github action - #2', url: 'https://dev.to/hidaytrahman/manual-trigger-on-github-action-2-501i', meta: 'Jul 3, 2023 · GitHub Actions · CI/CD' },
+		{ title: 'Greet to the new PR and issue creator in Github Action - #1', url: 'https://dev.to/hidaytrahman/greet-to-the-new-pr-and-issue-creator-in-github-action-1-k89', meta: 'May 25, 2023 · GitHub Actions · Automation' },
+		{ title: 'Handle protected page routes in NextJS using NextAuth', url: 'https://dev.to/hidaytrahman/handle-protected-page-routes-in-nextjs-using-nextauth-4b69', meta: 'Apr 25, 2023 · Next.js · Authentication' },
 	],
 	socials: [
 		{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/hidaytrahman/' },

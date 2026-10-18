@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { portfolio } from './core/data/portfolio';
-import articles from './core/data/devto.json';
 
 const categories = ['All work', 'Tools', 'Open source', 'Experiments'];
 
@@ -109,20 +108,26 @@ function Portfolio() {
               <a className="text-link" href={`mailto:${portfolio.email}`}>
                 Get in touch <Arrow diagonal />
               </a>
+              <a className="text-link" href="https://calendly.com/hidaytrahman/15" target="_blank" rel="noreferrer">
+                Book a quick call <Arrow diagonal />
+              </a>
             </div>
             <div className="hero-footnote">
               <span className="mono-label">CURRENTLY</span>
               <span>
-                Tech Lead at{' '}
+                {portfolio.organization.designation} at{' '}
                 <a
-                  href="https://www.candescent.com/"
+                  href={portfolio.organization.url}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Candescent <Arrow diagonal />
+                  {portfolio.organization.title} <Arrow diagonal />
                 </a>
               </span>
             </div>
+            <p className="hero-quote">
+              “{portfolio.quote}” <span>· {portfolio.languages.join(' · ')}</span>
+            </p>
           </div>
           <div
             className="hero-art"
@@ -596,19 +601,17 @@ function Portfolio() {
             </a>
           </div>
           <div className="writing-list">
-            {articles.slice(0, 3).map((article, index) => (
+            {portfolio.writing.map((article, index) => (
               <a
                 className="writing-item"
                 href={article.url}
                 target="_blank"
                 rel="noreferrer"
-                key={article.id}
+                key={article.url}
               >
                 <span className="writing-index">0{index + 1}</span>
                 <span className="writing-title">{article.title}</span>
-                <span className="writing-meta">
-                  {article.tag_list?.slice(0, 2).join(' · ')}
-                </span>
+                <span className="writing-meta">{article.meta}</span>
                 <span className="writing-arrow">↗</span>
               </a>
             ))}
