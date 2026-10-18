@@ -1,0 +1,80 @@
+export const portfolio = {
+	name: 'Hidayt Rahman',
+	role: 'Technology Lead · Senior Frontend Engineer',
+	location: 'New Delhi, India',
+	email: 'hidaytrahman@gmail.com',
+	intro: 'I’m a technology lead and frontend engineer who turns complex product needs into clear, dependable experiences—and helps teams build them with confidence.',
+	highlights: [
+		{ value: '10+', label: 'years building for the web' },
+		{ value: 'Lead', label: 'frontend teams and practices' },
+		{ value: 'End to end', label: 'from systems to interface' },
+	],
+	projects: [
+		{
+			name: 'Chepo', category: 'Tools', visual: 'mockdata',
+			summary: 'A lightweight way to create and serve mock data for development.',
+			details: 'Chepo is a TypeScript project for quickly working with mock data. It makes it easier to shape predictable responses while building and testing an application. The project is available as a public repository with a live demo.',
+			stack: ['TypeScript', 'Mock data', 'Developer tooling'],
+			github: 'https://github.com/hidaytrahman/chepo', demo: 'https://hidaytrahman.github.io/chepo/',
+		},
+		{
+			name: 'CamCheckmate', category: 'Tools', visual: 'camera',
+			summary: 'A browser-based webcam testing tool with a focused, direct interface.',
+			details: 'CamCheckmate explores a small but useful browser utility: checking a webcam from the browser. The public app and source are available to explore; this overview sticks to the project’s stated purpose.',
+			stack: ['TypeScript', 'Browser APIs', 'Web utility'],
+			github: 'https://github.com/hidaytrahman/camcheckmate', demo: 'https://camcheckmate.vercel.app',
+		},
+		{
+			name: 'Template RTW', category: 'Open source', visual: 'template',
+			summary: 'A starter template for React 19, TypeScript 5, and Webpack 5.',
+			details: 'A reusable project starting point that brings together a modern React and TypeScript setup with Webpack. The repository is useful to developers who want a ready base for a new application.',
+			stack: ['React 19', 'TypeScript 5', 'Webpack 5'],
+			github: 'https://github.com/hidaytrahman/template-rtw', demo: 'https://hidaytrahman.github.io/template-rtw/',
+		},
+		{
+			name: 'PreAPI', category: 'Experiments', visual: 'api',
+			summary: 'A file-based database prototype for simple API workflows.',
+			details: 'PreAPI is a small JavaScript prototype that uses files as a backing store for API data. It explores a minimal setup for trying out API ideas without first building a full database layer.',
+			stack: ['JavaScript', 'REST API', 'Prototype'],
+			github: 'https://github.com/hidaytrahman/preapi', demo: 'https://preapi.vercel.app',
+		},
+	],
+	principles: [
+		{ title: 'Start with the shape of the problem', text: 'I work with product, design, and engineering to make constraints visible early. A shared understanding makes architecture a tool for delivery instead of ceremony.', tags: ['Problem framing', 'Product partnership'] },
+		{ title: 'Create patterns that give teams room', text: 'Reusable components and clear conventions should reduce repeated decisions while leaving space for a feature to be genuinely different when it needs to be.', tags: ['Design systems', 'Frontend architecture'] },
+		{ title: 'Make quality part of the workflow', text: 'Performance, accessibility, testing, and maintainability belong in everyday decisions. Small feedback loops help teams catch issues while they are still easy to solve.', tags: ['Quality', 'Performance', 'Accessibility'] },
+		{ title: 'Share context, build capability', text: 'I enjoy mentoring, technical training, and making decisions legible. Strong teams can move independently when the reasoning and standards are easy to find.', tags: ['Mentorship', 'Technical leadership'] },
+	],
+	roles: [
+		{
+			period: 'FEB 2023 — PRESENT', company: 'Infogain', title: 'Technology Lead', location: 'Noida · India',
+			label: 'Current role',
+			summary: 'Leading technology work at Infogain, with a frontend focus and responsibility for helping teams deliver dependable product experiences.',
+			focus: ['Frontend engineering and architecture', 'Team guidance and technical training', 'Client collaboration and delivery'],
+		},
+		{
+			period: '2019', company: 'InnerSource Hackathon', title: 'Team participant', location: 'Worldwide team event',
+			label: 'Recognition',
+			summary: 'Participated in a Thales worldwide hackathon with a team that developed an alerting concept for identifying potentially infected IP addresses.',
+			focus: ['Collaborative product prototyping', 'Security-focused tooling', 'Voice-command interaction'],
+		},
+		{
+			period: '2016', company: 'Pacific Institute of Engineering and Management', title: 'Master in Computer Application', location: 'India',
+			label: 'Education',
+			summary: 'Completed a Master in Computer Application, building a foundation for a career in software and frontend engineering.',
+			focus: ['Computer application', 'Software development foundations'],
+		},
+	],
+	capabilities: [
+		{ title: 'Frontend', items: ['React', 'TypeScript', 'JavaScript', 'Next.js', 'HTML & CSS', 'Design systems'] },
+		{ title: 'Architecture', items: ['Frontend architecture', 'Component libraries', 'Performance', 'Testing', 'Accessibility'] },
+		{ title: 'Team & delivery', items: ['Technical leadership', 'Mentoring & training', 'Client collaboration', 'Agile delivery'] },
+		{ title: 'Beyond the UI', items: ['Node.js', 'REST APIs', 'GraphQL', 'GitHub Actions'] },
+	],
+	socials: [
+		{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/hidaytrahman/' },
+		{ name: 'GitHub', url: 'https://github.com/hidaytrahman' },
+		{ name: 'Dev.to', url: 'https://dev.to/hidaytrahman' },
+		{ name: 'Medium', url: 'https://hidaytrahman.medium.com/' },
+	],
+};

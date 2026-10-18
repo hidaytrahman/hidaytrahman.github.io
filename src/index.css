@@ -1,31 +1,6 @@
-body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-		'Droid Sans', 'Helvetica Neue', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-.ReactModalPortal .ReactModal__Overlay {
-	background-color: #000000cc !important;
-}
-
-.ReactModal__Body--open #root {
-	filter: blur(3px);
-}
-
-
-.code-line {
-	font-size: 10px;
-    background: black;
-    color: #fff;
-    padding: 5px 9px;
-    display: inline-block;
-    font-family: monospace;
-    border-radius: 5px;
-    margin: 5px 0;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 18px; }
+body { margin: 0; min-width: 320px; background: #f5f4ef; }
+button, a { font: inherit; }
+button:focus-visible, a:focus-visible { outline: 2px solid #e5653f; outline-offset: 4px; }
+::selection { color: #fff8ef; background: #e5653f; }
